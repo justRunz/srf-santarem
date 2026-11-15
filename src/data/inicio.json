@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "eyebrow": "Aluguer Game Ready · Santarém",
+    "titulo": ["Recupere", "o joelho", "em casa."],
+    "texto": "Aluguer de equipamento profissional de compressão e crioterapia. Entregamos e montamos em sua casa.",
+    "imagem": "/img/gameready.png"
+  },
+  "intro": {
+    "eyebrow": "O teu corpo, a tua prioridade",
+    "titulo": ["Frio contínuo.", "Compressão ativa.", "Em sua casa."],
+    "texto": "Combinando compressão pneumática com terapia de frio ajustável, o Game Ready é uma referência na recuperação ortopédica. Alugue-o para aliviar a dor e reduzir o inchaço depois da cirurgia ao joelho."
+  },
+  "pontos": [
+    { "titulo": "Crioterapia ativa", "texto": "Circula água fria de forma contínua para aliviar a dor pós-cirúrgica, sem a confusão dos sacos de gelo tradicionais." },
+    { "titulo": "Compressão pneumática", "texto": "Imita as contrações musculares naturais para ajudar a afastar o edema do joelho e reduzir o inchaço." },
+    { "titulo": "Entrega e instalação", "texto": "Entregamos e montamos a unidade em Santarém, e explicamos como a usar para que se sinta à vontade desde o primeiro dia." },
+    { "titulo": "Planos personalizados", "texto": "Opções flexíveis, adaptadas às recomendações do seu médico e ao seu calendário de recuperação." }
+  ],
+  "kit": {
+    "titulo": ["Um kit completo,", "pronto a usar."],
+    "itens": [
+      { "titulo": "Unidade de controlo", "foto": "" },
+      { "titulo": "Joelheira anatómica", "foto": "" },
+      { "titulo": "Mala de transporte", "foto": "" },
+      { "titulo": "Entrega em sua casa", "foto": "" }
+    ]
+  },
+  "pacotes": {
+    "titulo": ["Um período para", "cada recuperação."],
+    "itens": [
+      { "nome": "Recuperação", "texto": "O aluguer mínimo, ideal para as duas semanas críticas após a cirurgia." },
+      { "nome": "Intensivo", "texto": "Compressão e frio diários durante o primeiro mês de fisioterapia." },
+      { "nome": "Extensão", "texto": "Para recuperações mais longas, com tarifa diária e contrato transparente." }
+    ]
+  },
+  "passos": {
+    "eyebrow": "Como funciona",
+    "itens": [
+      { "titulo": "Contacte-nos", "texto": "Indique o tipo e a data da cirurgia, a duração do aluguer e o local de entrega." },
+      { "titulo": "Recebe em casa", "texto": "Entregamos e montamos a unidade. Grátis em Santarém, envio para todo o Portugal." },
+      { "titulo": "Recupere", "texto": "Use o Game Ready conforme as indicações do seu médico. A devolução é feita pelo mesmo método da entrega." }
+    ]
+  },
+  "sobre": {
+    "eyebrow": "Quem somos",
+    "titulo": ["Uma recuperação", "mais tranquila."],
+    "textos": [
+      "Sediado em Santarém, o Sistema de Recuperação Compressão e Frio nasceu para dar a pacientes e atletas acesso imediato a tecnologia de reabilitação de nível profissional.",
+      "Acreditamos que todos merecem cuidados pós-operatórios de qualidade, sem terem de comprar equipamento caro."
+    ]
+  }
+}

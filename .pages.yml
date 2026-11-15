@@ -1,0 +1,190 @@
+# Configuração do Pages CMS (app.pagescms.org): o que o dono do site pode editar sem código.
+media:
+  input: public/img
+  output: /img
+
+components:
+  hero:
+    label: Topo da página
+    type: object
+    fields:
+      - { name: eyebrow, label: Pequeno texto acima do título, type: string }
+      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+      - { name: texto, label: Texto, type: text }
+  kit:
+    label: Carrossel do kit
+    type: object
+    fields:
+      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+      - name: itens
+        label: Fotos
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Nome, type: string }
+          - { name: foto, label: Foto, type: image }
+  pacotes:
+    label: Pacotes (3 cartões; duração e preço vêm das Tarifas)
+    type: object
+    fields:
+      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+      - name: itens
+        label: Cartões
+        type: object
+        list:
+          min: 3
+          max: 3
+        fields:
+          - { name: nome, label: Nome, type: string }
+          - { name: texto, label: Texto, type: text }
+  destaque:
+    label: Faixa escura
+    type: object
+    fields:
+      - { name: eyebrow, label: Pequeno texto acima do título, type: string }
+      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+      - { name: texto, label: Texto, type: text }
+
+content:
+  - name: site
+    label: Informações gerais
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: nome, label: Nome completo, type: string }
+      - { name: sigla, label: Sigla (menu e rodapé), type: string }
+      - { name: descricao, label: Descrição para o Google, type: text }
+      - { name: telefone, label: Telefone, type: string }
+      - { name: whatsapp, label: "Número WhatsApp (só algarismos, com 351)", type: string }
+      - { name: mensagemWhatsapp, label: Mensagem pré-escrita do WhatsApp, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: morada, label: Morada, type: string }
+      - { name: codigoPostal, label: Código postal e cidade, type: string }
+      - { name: horario, label: Horário (uma linha por item), type: string, list: true }
+      - { name: rodape, label: Texto do rodapé (uma linha por item), type: string, list: true }
+
+  - name: precos
+    label: Preços e Entregas
+    type: file
+    path: src/data/precos.json
+    format: json
+    fields:
+      - name: tarifas
+        label: Tarifas (em €, usadas em todo o site)
+        type: object
+        fields:
+          - { name: quinzeDias, label: Aluguer mínimo 15 dias, type: number }
+          - { name: diaExtra, label: Dia extra (16.º ao 30.º), type: number }
+          - { name: mes, label: Mês completo (30 dias), type: number }
+          - { name: diaAposMes, label: Por dia após o 1.º mês, type: number }
+          - { name: caucao, label: Caução, type: number }
+      - { name: hero, component: hero }
+      - name: grupos
+        label: Tabelas
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - name: linhas
+            label: Linhas
+            type: object
+            list: true
+            fields:
+              - { name: nome, label: Nome, type: string }
+              - { name: valor, label: Valor, type: string }
+      - { name: condicoesCaucao, label: Condições da caução, type: string }
+      - name: destaque
+        label: Faixa escura
+        type: object
+        fields:
+          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+          - { name: texto, label: Texto, type: text }
+
+  - name: inicio
+    label: Página Início
+    type: file
+    path: src/data/inicio.json
+    format: json
+    fields:
+      - name: hero
+        label: Topo da página
+        type: object
+        fields:
+          - { name: eyebrow, label: Pequeno texto acima do título, type: string }
+          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+          - { name: texto, label: Texto, type: text }
+          - { name: imagem, label: Imagem do aparelho, type: image }
+      - { name: intro, component: hero, label: Introdução }
+      - name: pontos
+        label: Blocos
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+      - { name: kit, component: kit }
+      - { name: pacotes, component: pacotes }
+      - name: passos
+        label: Como funciona
+        type: object
+        fields:
+          - { name: eyebrow, label: Pequeno texto, type: string }
+          - name: itens
+            label: Passos
+            type: object
+            list: true
+            fields:
+              - { name: titulo, label: Título, type: string }
+              - { name: texto, label: Texto, type: text }
+      - name: sobre
+        label: Quem somos (faixa escura)
+        type: object
+        fields:
+          - { name: eyebrow, label: Pequeno texto acima do título, type: string }
+          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+          - { name: textos, label: Parágrafos, type: text, list: true }
+
+  - name: beneficios
+    label: Página Benefícios
+    type: file
+    path: src/data/beneficios.json
+    format: json
+    fields:
+      - { name: hero, component: hero }
+      - name: pontos
+        label: Blocos
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+      - { name: destaque, component: destaque }
+
+  - name: equipamentos
+    label: Página Equipamentos
+    type: file
+    path: src/data/equipamentos.json
+    format: json
+    fields:
+      - { name: hero, component: hero }
+      - { name: kit, component: kit }
+      - name: pontos
+        label: Blocos
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: texto, label: Texto, type: text }
+      - { name: pacotes, component: pacotes }
+      - { name: destaque, component: destaque }
+
+  - name: contactos
+    label: Página Contactos
+    type: file
+    path: src/data/contactos.json
+    format: json
+    fields:
+      - { name: hero, component: hero }
+      - { name: pedido, label: Texto do pedido, type: text }
+      - { name: area, label: Área de serviço, type: text }

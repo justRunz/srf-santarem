@@ -1,0 +1,21 @@
+---
+// 3 cartes : durée et prix viennent des tarifas (precos.json), le texte de la page.
+import precos from '../data/precos.json';
+const { itens, comPreco = false } = Astro.props;
+const t = precos.tarifas;
+const fixos = [
+  { dur: '15', un: 'dias', preco: `${t.quinzeDias} €` },
+  { dur: '1', un: 'mês', preco: `${t.mes} €` },
+  { dur: '+30', un: 'dias', preco: `${t.diaAposMes} € / dia` },
+];
+---
+<div class="cards">
+  {itens.slice(0, 3).map((it, i) => (
+    <div class={`card reveal${i === 1 ? ' featured' : ''}`} style={i ? `--d:${i / 10}s` : undefined}>
+      <div class="dur">{fixos[i].dur} <small>{fixos[i].un}</small></div>
+      <h3>{it.nome}</h3>
+      <p>{it.texto}</p>
+      {comPreco && <div class="foot">{fixos[i].preco}</div>}
+    </div>
+  ))}
+</div>

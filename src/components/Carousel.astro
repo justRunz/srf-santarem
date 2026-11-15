@@ -1,0 +1,14 @@
+---
+const { itens } = Astro.props;
+---
+<div class="carousel reveal">
+  <div class="track">
+    {itens.map((it) => (
+      <div class="slide">
+        {it.foto ? <img src={it.foto} alt={it.titulo} loading="lazy" /> : <span class="ph-label">Foto · {it.titulo.toLowerCase()}</span>}
+        <h3>{it.titulo}</h3>
+      </div>
+    ))}
+  </div>
+  <div class="car-ctrl"><button class="prev" aria-label="Anterior">←</button><button class="next" aria-label="Seguinte">→</button><span class="count">1/{itens.length}</span></div>
+</div>

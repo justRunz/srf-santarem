@@ -1,0 +1,15 @@
+---
+import Lines from './Lines.astro';
+const { d } = Astro.props;
+const textos = d.textos ?? [d.texto];
+---
+<section class="dark">
+  <div class="wrap">
+    <div class="right">
+      {d.eyebrow && <span class="eyebrow reveal">{d.eyebrow}</span>}
+      <Lines class="h-md" linhas={d.titulo} />
+      {textos.map((t, i) => <p class="reveal" style={i ? undefined : 'margin-top:28px'}>{t}</p>)}
+      <div class="pills reveal" style="margin-top:32px"><slot /></div>
+    </div>
+  </div>
+</section>

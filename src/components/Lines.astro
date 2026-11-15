@@ -1,0 +1,6 @@
+---
+// Titre révélé ligne par ligne : chaque ligne du tableau devient une ligne animée.
+const { linhas, tag = 'h2', class: cls = '' } = Astro.props;
+const Tag = tag;
+---
+<Tag class={`lines ${cls}`.trim()}>{linhas.map((l, i) => <span><span style={i ? `--d:${i / 10}s` : undefined}>{l}</span></span>)}</Tag>

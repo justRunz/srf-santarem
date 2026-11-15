@@ -1,0 +1,10 @@
+---
+import Lines from './Lines.astro';
+const { hero } = Astro.props;
+---
+<div class="wrap page-hero">
+  <span class="eyebrow reveal">{hero.eyebrow}</span>
+  <Lines tag="h1" linhas={hero.titulo} />
+  <p class="reveal" style="--d:.3s">{hero.texto}</p>
+  <slot />
+</div>

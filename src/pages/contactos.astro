@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import site from '../data/site.json';
+import p from '../data/contactos.json';
+import { wa, tel } from '../lib.js';
+const morada = `${site.morada}, ${site.codigoPostal}`;
+---
+<Layout titulo="Contactos">
+  <PageHero slot="hero" hero={p.hero}>
+    <div class="pills reveal" style="--d:.4s;margin-top:28px"><a class="pill" href={wa}>WhatsApp</a><a class="pill ghost" href={tel}>Ligar</a></div>
+  </PageHero>
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <p class="lead reveal" style="margin:0 0 40px">{p.pedido}</p>
+        <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.telefone}</a></div>
+        <div class="info reveal"><small>Email</small><a href={`mailto:${site.email}`}>{site.email}</a></div>
+        <div class="info reveal"><small>Morada</small>{morada}</div>
+        <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
+        <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
+      </div>
+      <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
+    </div>
+  </section>
+</Layout>

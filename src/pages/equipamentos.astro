@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Lines from '../components/Lines.astro';
+import Carousel from '../components/Carousel.astro';
+import Pacotes from '../components/Pacotes.astro';
+import Destaque from '../components/Destaque.astro';
+import p from '../data/equipamentos.json';
+---
+<Layout titulo="Equipamentos">
+  <PageHero slot="hero" hero={p.hero} />
+  <section>
+    <div class="wrap">
+      <div class="head-row"><Lines class="h-md" linhas={p.kit.titulo} /></div>
+      <Carousel itens={p.kit.itens} />
+      <div class="features" style="margin-top:72px">
+        {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="head-row">
+        <Lines class="h-md" linhas={p.pacotes.titulo} />
+        <a class="pill ghost reveal" href="/precos">Ver preços</a>
+      </div>
+      <Pacotes itens={p.pacotes.itens} />
+    </div>
+  </section>
+  <Destaque d={p.destaque}><a class="pill light" href="/contactos">Contactar para reservar</a></Destaque>
+</Layout>

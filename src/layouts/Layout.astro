@@ -1,0 +1,59 @@
+---
+import site from '../data/site.json';
+const { titulo } = Astro.props;
+import { wa, tel } from '../lib.js';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos', 'Equipamentos'], ['/precos', 'Preços e Entregas'], ['/contactos', 'Contactos']];
+---
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{titulo} · {site.sigla} Santarém</title>
+<meta name="description" content={site.descricao}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="sky">
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label={`${site.sigla} — ${site.nome}`}><span class="logo">LOGO</span>{site.sigla}</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">≡</button>
+    <nav>
+      {nav.map(([href, label]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}
+    </nav>
+  </div>
+</header>
+<slot name="hero" />
+</div>
+<main>
+<slot />
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>{site.nome}</h3>
+        <p>{site.rodape.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+        <div class="pills" style="margin-top:20px"><a class="pill light" href={wa}>Reservar pelo WhatsApp</a></div>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><a href={tel}>{site.telefone}</a><br><a href={`mailto:${site.email}`}>{site.email}</a><br>{site.morada}<br>{site.codigoPostal}</p>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <p>{site.horario.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+      </div>
+    </div>
+    <div class="foot-mark">{site.sigla}</div>
+    <div class="legal"><span>© {new Date().getFullYear()} {site.nome}</span><span>Santarém, Portugal</span></div>
+  </div>
+</footer>
+<script is:inline src="/script.js"></script>
+</body>
+</html>
