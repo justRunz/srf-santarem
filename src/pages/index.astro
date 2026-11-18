@@ -26,13 +26,10 @@ const d = (i) => (i % 2 ? '--d:.1s' : undefined);
         <li>{t.caucao} € de caução</li>
       </ul>
     </div>
-    <div class="stage reveal" style="--d:.2s">
-      <div class="disc"></div>
-      <div class="product"><div class="product-inner">
-        <img src={p.hero.imagem} alt="Unidade de controlo Game Ready GRPro 2.1" width="902" height="690">
-      </div></div>
-      <div class="shadow"></div>
+    <div class="hero-media">
+      <video src="/video/hero.mp4" poster="/video/hero.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
     </div>
+    <script is:inline>if(matchMedia('(prefers-reduced-motion:reduce)').matches)document.querySelector('.hero-media video').removeAttribute('autoplay')</script>
   </div>
 
   <section>
