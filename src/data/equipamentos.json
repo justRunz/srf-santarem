@@ -5,7 +5,7 @@
       "Frio e",
       "compressão."
     ],
-    "texto": "Sistemas de crioterapia Game Ready de nível médico, com compressão e frio contínuo diretamente no joelho. Disponíveis para aluguer em Santarém e em todo o Portugal."
+    "texto": "Sistemas de crioterapia profissionais, com compressão e frio contínuo aplicados nas pernas, no joelho ou no ombro. Disponíveis para aluguer em Santarém e em todo o Portugal."
   },
   "kit": {
     "titulo": [
@@ -18,8 +18,8 @@
         "foto": "/img/unidade-controlo.png"
       },
       {
-        "titulo": "Joelheira anatómica",
-        "foto": "/img/joelheira.png"
+        "titulo": "Manga para pernas",
+        "foto": "/img/manga-perna.png"
       },
       {
         "titulo": "Mala de transporte",
@@ -34,7 +34,7 @@
   "pontos": [
     {
       "titulo": "Kit de aluguer completo",
-      "texto": "Cada aluguer é entregue pronto a usar, com a unidade de controlo principal e uma joelheira anatómica."
+      "texto": "Cada aluguer é entregue pronto a usar, com a unidade de controlo e as mangas adequadas à zona a tratar."
     },
     {
       "titulo": "Interface simples",
@@ -49,7 +49,7 @@
     "itens": [
       {
         "nome": "Recuperação",
-        "texto": "O aluguer mínimo. Unidade Game Ready completa com joelheira, ideal para as duas semanas críticas após a cirurgia."
+        "texto": "O aluguer mínimo. Unidade completa com as mangas necessárias, ideal para as duas semanas críticas após a cirurgia."
       },
       {
         "nome": "Intensivo",
