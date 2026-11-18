@@ -36,5 +36,21 @@ document.querySelectorAll('.carousel').forEach(c => {
   const go = d => track.scrollTo({ left: (Math.max(0, Math.min(n - 1, idx() + d))) * track.clientWidth, behavior: 'smooth' });
   c.querySelector('.prev').onclick = () => go(-1);
   c.querySelector('.next').onclick = () => go(1);
-  track.addEventListener('scroll', () => out.textContent = `${idx() + 1}/${n}`, { passive: true });
+  const title = c.querySelector('.car-title');
+  let cur = 0;
+  // Fondu des images : chaque slide s'estompe à mesure qu'elle sort du cadre
+  const slides = [...track.children];
+  const fade = () => slides.forEach((sl, j) => {
+    const d = Math.abs(j - track.scrollLeft / track.clientWidth);
+    sl.firstElementChild.style.opacity = Math.max(0, 1 - d * 1.6);
+  });
+  track.addEventListener('scroll', fade, { passive: true });
+  track.addEventListener('scroll', () => {
+    const i = idx();
+    if (i === cur) return;
+    cur = i;
+    out.textContent = `${i + 1}/${n}`;
+    title.textContent = track.children[i].dataset.titulo;
+    if (!reduce) title.animate({ opacity: [0, 1] }, { duration: 400, easing: 'ease-out' });
+  }, { passive: true });
 });

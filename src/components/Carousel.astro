@@ -2,11 +2,11 @@
 const { itens } = Astro.props;
 ---
 <div class="carousel reveal">
+  <h3 class="car-title" aria-live="polite">{itens[0]?.titulo}</h3>
   <div class="track">
     {itens.map((it) => (
-      <div class="slide">
+      <div class="slide" data-titulo={it.titulo}>
         {it.foto ? <img src={it.foto} alt={it.titulo} loading="lazy" /> : <span class="ph-label">Foto · {it.titulo.toLowerCase()}</span>}
-        <h3>{it.titulo}</h3>
       </div>
     ))}
   </div>
