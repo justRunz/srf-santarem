@@ -8,7 +8,6 @@ import p from '../data/inicio.json';
 import precos from '../data/precos.json';
 const t = precos.tarifas;
 import { wa } from '../lib.js';
-const d = (i) => (i % 2 ? '--d:.1s' : undefined);
 ---
 <Layout titulo="Início">
   <div class="wrap hero" slot="hero">
@@ -42,7 +41,7 @@ const d = (i) => (i % 2 ? '--d:.1s' : undefined);
 
   <section style="padding-top:0">
     <div class="wrap features">
-      {p.pontos.map((f, i) => <div class="feature reveal" style={d(i)}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
     </div>
   </section>
 

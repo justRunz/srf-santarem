@@ -114,7 +114,6 @@ content:
           - { name: eyebrow, label: Pequeno texto acima do título, type: string }
           - { name: titulo, label: Título (uma linha por item), type: string, list: true }
           - { name: texto, label: Texto, type: text }
-          - { name: imagem, label: Imagem do aparelho, type: image }
       - { name: intro, component: hero, label: Introdução }
       - name: pontos
         label: Blocos
