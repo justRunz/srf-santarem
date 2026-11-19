@@ -1,8 +1,8 @@
 {
   "tarifas": {
-    "quinzeDias": 373,
+    "quinzeDias": 350,
     "diaExtra": 25,
-    "mes": 750,
+    "mes": 700,
     "diaAposMes": 30,
     "caucao": 0
   },
