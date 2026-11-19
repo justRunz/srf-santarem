@@ -1,7 +1,7 @@
 /* Style inspiré de Hyer Aviation (Refero) : ciel pâle, typo massive, pilules, une seule touche terracotta */
 :root{
   --ink:#000d10; --white:#fff; --ash:#8e8e95; --hair:#d5d3d4;
-  --midnight:#0f0f1c; --charcoal:#151623; --clay:#bc7155;
+  --midnight:#0f0f1c; --charcoal:#151623; --accent:#2d4a6e;
   --stone:#efece8; --stone-2:#e6e2dc;
   --font:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.1,1);
@@ -32,7 +32,7 @@ nav a[aria-current]{text-decoration:underline;text-underline-offset:6px}
 .hero-title{font-size:clamp(40px,5.4vw,76px);letter-spacing:-.045em;line-height:.92}
 .hero-lead{font-size:clamp(16px,1.2vw,18px);color:#5d6168;max-width:440px;margin:28px 0 32px}
 .trust{list-style:none;padding:0;margin:36px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.85rem;font-weight:500;color:#5d6168}
-.trust li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--clay);margin-right:8px;vertical-align:middle}
+.trust li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle}
 /* Socle : disque + ombre au sol qui ancrent l'appareil */
 /* Vidéo de fond du héros : couvre tout le ciel, voile clair à gauche pour le texte */
 .hero-text{position:relative;z-index:1}
@@ -97,7 +97,7 @@ section{padding:clamp(72px,11vw,150px) 0}
 .card h3{font-size:19px;margin:20px 0 10px}
 .card p{color:var(--ash);margin:0}
 .card .foot{margin-top:auto;padding-top:28px;font-weight:600}
-.card.featured{background:var(--clay);color:#fff}
+.card.featured{background:var(--accent);color:#fff}
 .card.featured h3{color:#fff}.card.featured p{color:rgba(255,255,255,.82)}
 
 /* Bande sombre */
