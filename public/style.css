@@ -10,6 +10,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;font:400 16px/1.6 var(--font);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
+p{white-space:pre-line} /* garde les retours à la ligne saisis dans Pages CMS */
 a{color:inherit}
 h1,h2,h3{margin:0;font-weight:700;line-height:1;color:var(--ink)}
 p{margin:0 0 1em}
