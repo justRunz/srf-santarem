@@ -1,18 +1,36 @@
 {
   "hero": {
     "eyebrow": "Benefícios",
-    "titulo": ["Recuperar", "sem gelo."],
+    "titulo": [
+      "Recuperar",
+      "sem gelo."
+    ],
     "texto": "Descubra como os nossos sistemas de crioterapia e compressão ajudam a recuperar, a reduzir o inchaço e a ganhar mobilidade mais depressa após uma cirurgia ou uma atividade física intensa."
   },
   "pontos": [
-    { "titulo": "Recuperação pós-cirúrgica", "texto": "Recuperar de uma intervenção ortopédica, como uma cirurgia ao joelho ou ao ombro, exige cuidados específicos. A terapia de frio com compressão ajuda a controlar a inflamação e o inchaço, a gerir a dor e a recuperar a mobilidade." },
-    { "titulo": "Temperatura constante", "texto": "Os sacos de gelo derretem, saem do sítio e perdem eficácia em poucas horas. O nosso equipamento mantém uma temperatura constante e regulada, sem variações nem fugas de água." },
-    { "titulo": "Compressão ativa", "texto": "A compressão pneumática envolve toda a articulação e permite controlar exatamente onde o frio é aplicado." },
-    { "titulo": "Desporto e reabilitação", "texto": "Útil para atletas que procuram aliviar a fadiga muscular, pessoas ativas no pós-treino e quem tem desconforto articular crónico. Bom complemento à fisioterapia com acompanhamento médico." }
+    {
+      "titulo": "Recuperação pós-cirúrgica",
+      "texto": "Recuperar de uma intervenção ortopédica, como uma cirurgia ao joelho ou ao ombro, exige cuidados específicos. A terapia de frio com compressão ajuda a controlar a inflamação e o inchaço, a gerir a dor e a recuperar a mobilidade."
+    },
+    {
+      "titulo": "Temperatura constante",
+      "texto": "Os sacos de gelo derretem, saem do sítio e perdem eficácia em pouco tempo. O nosso equipamento mantém uma temperatura constante e regulada, sem variações nem fugas de água."
+    },
+    {
+      "titulo": "Compressão ativa",
+      "texto": "A compressão pneumática envolve toda a articulação e permite controlar exatamente onde o frio é aplicado."
+    },
+    {
+      "titulo": "Desporto e reabilitação",
+      "texto": "Útil para atletas que procuram aliviar a fadiga muscular, pessoas ativas no pós-treino e quem tem desconforto articular crónico. Bom complemento à fisioterapia com acompanhamento médico."
+    }
   ],
   "destaque": {
     "eyebrow": "Frio controlado vs. gelo comum",
-    "titulo": ["O gelo derrete.", "O frio controlado não."],
-    "texto": "As bolsas de gelo e as compressas congeladas perdem eficácia em poucas horas. Os nossos sistemas profissionais garantem temperaturas constantes e reguladas, com compressão ativa, durante toda a sua recuperação."
+    "titulo": [
+      "O gelo derrete.",
+      "O frio controlado não."
+    ],
+    "texto": "As bolsas de gelo e as compressas congeladas perdem eficácia em pouco tempo. Os nossos sistemas profissionais garantem temperaturas constantes e reguladas, com compressão ativa, durante toda a sua recuperação."
   }
 }
