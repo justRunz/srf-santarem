@@ -5,12 +5,6 @@ import Destaque from '../components/Destaque.astro';
 import p from '../data/precos.json';
 import { wa } from '../lib.js';
 const t = p.tarifas;
-const duracao = [
-  ['Aluguer mínimo (15 dias)', `${t.quinzeDias} €`],
-  ['Dia extra (do 16.º ao 30.º dia)', `${t.diaExtra} € / dia`],
-  ['Mês completo (30 dias)', `${t.mes} €`],
-  ['Após o primeiro mês', `${t.diaAposMes} € / dia`],
-];
 const stats = [
   [t.quinzeDias, '15 dias (mínimo)'],
   [t.diaExtra, 'por dia extra, do 16.º ao 30.º'],
@@ -19,17 +13,15 @@ const stats = [
 ];
 ---
 <Layout titulo="Preços e Entregas">
-  <PageHero slot="hero" hero={p.hero} />
+  <PageHero slot="hero" hero={p.hero}>
+    <div class="pills reveal" style="--d:.4s;margin-top:28px"><a class="pill" href={wa}>Reservar pelo WhatsApp</a><a class="pill ghost" href="/contactos">Contactos</a></div>
+  </PageHero>
   <section>
     <div class="wrap">
       <div class="stats" style="margin-bottom:clamp(72px,10vw,140px)">
         {stats.map(([n, l]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><span>{l}</span></div>)}
       </div>
       <div class="price-list">
-        <div class="price-group reveal">
-          <h3>Duração do aluguer</h3>
-          {duracao.map(([n, v]) => <div class="row"><span>{n}</span><b class="big">{v}</b></div>)}
-        </div>
         {p.grupos.map((g, i) => (
           <div class="price-group reveal">
             <h3>{g.titulo}</h3>
