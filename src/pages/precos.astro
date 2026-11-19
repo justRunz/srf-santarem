@@ -26,7 +26,7 @@ const stats = [
           <div class="price-group reveal">
             <h3>{g.titulo}</h3>
             {g.linhas.map((r) => <div class="row"><span>{r.nome}</span><b>{r.valor}</b></div>)}
-            {i === 0 && <div class="row"><span>Caução</span><b>{t.caucao} € ({p.condicoesCaucao})</b></div>}
+            {i === 0 && <div class="row"><span>Caução</span><b>{t.caucao ? `${t.caucao} €` : 'Não exigida'} ({p.condicoesCaucao})</b></div>}
           </div>
         ))}
       </div>

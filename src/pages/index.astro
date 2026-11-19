@@ -22,7 +22,7 @@ import { wa } from '../lib.js';
       <ul class="trust reveal" style="--d:.55s">
         <li>Entrega grátis em Santarém</li>
         <li>Desde {t.quinzeDias} € / 15 dias</li>
-        <li>{t.caucao} € de caução</li>
+        <li>{t.caucao ? `${t.caucao} € de caução` : 'Sem caução'}</li>
       </ul>
     </div>
     <div class="hero-media">
@@ -49,7 +49,7 @@ import { wa } from '../lib.js';
     <div class="wrap stats">
       <div class="stat"><b data-count="15">15</b><span>dias de aluguer mínimo</span></div>
       <div class="stat"><b data-count={t.quinzeDias} data-suffix=" €">{t.quinzeDias} €</b><span>por 15 dias, tudo incluído</span></div>
-      <div class="stat"><b data-count={t.caucao} data-suffix=" €">{t.caucao} €</b><span>de caução</span></div>
+      <div class="stat">{t.caucao ? <><b data-count={t.caucao} data-suffix=" €">{t.caucao} €</b><span>de caução</span></> : <><b>Sem</b><span>caução</span></>}</div>
       <div class="stat"><b data-count="1" data-suffix=" h">1 h</b><span>resposta máxima em casos urgentes</span></div>
     </div>
   </section>

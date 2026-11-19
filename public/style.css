@@ -1,6 +1,6 @@
 /* Style inspiré de Hyer Aviation (Refero) : ciel pâle, typo massive, pilules */
 :root{
-  --ink:#000d10; --white:#fff; --ash:#8e8e95; --hair:#d5d3d4;
+  --ink:#000d10; --white:#fff; --ash:#686b72; --hair:#d5d3d4;
   --midnight:#0f0f1c; --charcoal:#151623; --accent:#2d4a6e;
   --stone:#efece8; --stone-2:#e6e2dc;
   --font:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -84,8 +84,8 @@ section{padding:clamp(72px,11vw,150px) 0}
 .slide{flex:0 0 100%;scroll-snap-align:start;position:relative;aspect-ratio:16/8;overflow:hidden;display:flex;align-items:flex-end;padding:28px}
 .slide .ph-label{font-size:.8rem;color:#6b6660;border:1.5px dashed rgba(0,13,16,.2);border-radius:999px;padding:6px 14px;background:rgba(255,255,255,.5)}
 .car-title{position:absolute;z-index:2;margin:0;pointer-events:none;left:28px;top:28px;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em;max-width:14ch}
-.car-ctrl{position:absolute;right:28px;bottom:28px;display:flex;align-items:center;gap:14px;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.03em}
-.car-ctrl button{background:none;border:0;font:inherit;cursor:pointer;color:var(--ink);padding:0 2px;transition:transform .2s}
+.car-ctrl{position:absolute;right:28px;bottom:28px;display:flex;align-items:center;gap:4px;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.03em}
+.car-ctrl button{background:none;border:0;font:inherit;cursor:pointer;color:var(--ink);padding:0;min-width:44px;min-height:44px;transition:transform .2s}
 .car-ctrl button:hover{transform:scale(1.15)}
 
 /* Cartes pacotes */
