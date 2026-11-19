@@ -8,7 +8,6 @@ import p from '../data/inicio.json';
 import precos from '../data/precos.json';
 const t = precos.tarifas;
 import { wa } from '../lib.js';
-const d = (i) => (i % 2 ? '--d:.1s' : undefined);
 ---
 <Layout titulo="Início">
   <div class="wrap hero" slot="hero">
@@ -23,7 +22,7 @@ const d = (i) => (i % 2 ? '--d:.1s' : undefined);
       <ul class="trust reveal" style="--d:.55s">
         <li>Entrega grátis em Santarém</li>
         <li>Desde {t.quinzeDias} € / 15 dias</li>
-        <li>{t.caucao} € de caução</li>
+        <li>{t.caucao ? `${t.caucao} € de caução` : 'Sem caução'}</li>
       </ul>
     </div>
     <div class="hero-media">
@@ -42,7 +41,7 @@ const d = (i) => (i % 2 ? '--d:.1s' : undefined);
 
   <section style="padding-top:0">
     <div class="wrap features">
-      {p.pontos.map((f, i) => <div class="feature reveal" style={d(i)}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
     </div>
   </section>
 
@@ -50,7 +49,7 @@ const d = (i) => (i % 2 ? '--d:.1s' : undefined);
     <div class="wrap stats">
       <div class="stat"><b data-count="15">15</b><span>dias de aluguer mínimo</span></div>
       <div class="stat"><b data-count={t.quinzeDias} data-suffix=" €">{t.quinzeDias} €</b><span>por 15 dias, tudo incluído</span></div>
-      <div class="stat"><b data-count={t.caucao} data-suffix=" €">{t.caucao} €</b><span>de caução</span></div>
+      <div class="stat">{t.caucao ? <><b data-count={t.caucao} data-suffix=" €">{t.caucao} €</b><span>de caução</span></> : <><b>Sem</b><span>caução</span></>}</div>
       <div class="stat"><b data-count="1" data-suffix=" h">1 h</b><span>resposta máxima em casos urgentes</span></div>
     </div>
   </section>

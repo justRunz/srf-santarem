@@ -40,12 +40,11 @@ document.querySelectorAll('.carousel').forEach(c => {
   let cur = 0;
   // Fondu des images : chaque slide s'estompe à mesure qu'elle sort du cadre
   const slides = [...track.children];
-  const fade = () => slides.forEach((sl, j) => {
-    const d = Math.abs(j - track.scrollLeft / track.clientWidth);
-    sl.firstElementChild.style.opacity = Math.max(0, 1 - d * 1.6);
-  });
-  track.addEventListener('scroll', fade, { passive: true });
   track.addEventListener('scroll', () => {
+    slides.forEach((sl, j) => {
+      const d = Math.abs(j - track.scrollLeft / track.clientWidth);
+      sl.firstElementChild.style.opacity = Math.max(0, 1 - d * 1.6);
+    });
     const i = idx();
     if (i === cur) return;
     cur = i;
