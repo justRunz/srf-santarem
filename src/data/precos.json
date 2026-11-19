@@ -1,8 +1,8 @@
 {
   "tarifas": {
-    "quinzeDias": 373,
+    "quinzeDias": 350,
     "diaExtra": 25,
-    "mes": 750,
+    "mes": 700,
     "diaAposMes": 30,
     "caucao": 0
   },
@@ -12,7 +12,7 @@
       "Preços",
       "claros."
     ],
-    "texto": "Alugue equipamento de compressão e crioterapia de nível médico. Entrega gratuita em Santarém e entrega fiável para outras regiões."
+    "texto": "Alugue equipamento de compressão e crioterapia de alto nível médico. Entrega gratuita em Santarém e entrega fiável para outras regiões."
   },
   "grupos": [
     {
