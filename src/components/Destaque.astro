@@ -4,7 +4,8 @@ const { d } = Astro.props;
 const textos = d.textos ?? [d.texto];
 ---
 <section class="dark">
-  <div class="wrap">
+  <div class:list={["wrap", d.foto && "com-foto"]}>
+    {d.foto && <img class="destaque-foto reveal" src={d.foto} alt="" loading="lazy">}
     <div class="right">
       {d.eyebrow && <span class="eyebrow reveal">{d.eyebrow}</span>}
       <Lines class="h-md" linhas={d.titulo} />
