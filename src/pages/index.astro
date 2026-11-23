@@ -21,7 +21,6 @@ import { wa } from '../lib.js';
       </div>
       <ul class="trust reveal" style="--d:.55s">
         <li>Entrega grátis em Santarém</li>
-        <li>Desde {t.quinzeDias} € / 15 dias</li>
         <li>{t.caucao ? `${t.caucao} € de caução` : 'Sem caução'}</li>
       </ul>
     </div>
@@ -61,7 +60,7 @@ import { wa } from '../lib.js';
         <Lines class="h-md" linhas={p.pacotes.titulo} />
         <a class="pill ghost reveal" href="/precos">Preços e entregas</a>
       </div>
-      <Pacotes itens={p.pacotes.itens} comPreco />
+      <Pacotes itens={p.pacotes.itens} />
     </div>
   </section>
 

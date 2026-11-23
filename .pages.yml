@@ -24,7 +24,7 @@ components:
           - { name: titulo, label: Nome, type: string }
           - { name: foto, label: Foto, type: image }
   pacotes:
-    label: Pacotes (3 cartões; duração e preço vêm das Tarifas)
+    label: Pacotes (3 cartões; a duração é fixa)
     type: object
     fields:
       - { name: titulo, label: Título (uma linha por item), type: string, list: true }
@@ -175,6 +175,19 @@ content:
         fields:
           - { name: titulo, label: Título, type: string }
           - { name: texto, label: Texto, type: text }
+      - name: comoFunciona
+        label: Como funciona (3 vídeos)
+        type: object
+        fields:
+          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
+          - name: itens
+            label: Passos
+            type: object
+            list: { min: 3, max: 3 }
+            fields:
+              - { name: titulo, label: Título, type: string }
+              - { name: texto, label: Texto, type: text }
+              - { name: video, label: "Vídeo (caminho, ex.: /video/passo-gelo.mp4)", type: string }
       - { name: pacotes, component: pacotes }
       - { name: destaque, component: destaque }
 
