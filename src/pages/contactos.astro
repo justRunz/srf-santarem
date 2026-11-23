@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import Lines from '../components/Lines.astro';
 import site from '../data/site.json';
 import p from '../data/contactos.json';
 import { wa, tel } from '../lib.js';
@@ -21,6 +22,29 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
         <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
       </div>
       <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
+      <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
+        <label>Nome *<input name="nome" required autocomplete="name"></label>
+        <label>Telefone *<input name="telefone" type="tel" required autocomplete="tel"></label>
+        <label>Email<input name="email" type="email" autocomplete="email"></label>
+        <label>Tipo de cirurgia<input name="cirurgia"></label>
+        <label>Data da cirurgia<input name="data" type="date"></label>
+        <label>Duração do aluguer
+          <select name="duracao"><option value="">—</option><option>15 dias</option><option>1 mês</option><option>Mais de 1 mês</option></select>
+        </label>
+        <label class="full">Local de entrega *<input name="local" required autocomplete="street-address"></label>
+        <label class="full">Mensagem<textarea name="mensagem" rows="4"></textarea></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="full pills">
+          <button class="pill" value="wa">Enviar por WhatsApp</button>
+          <button class="pill ghost" value="email">Enviar por email</button>
+        </div>
+        <p class="full pedido-estado" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 </Layout>

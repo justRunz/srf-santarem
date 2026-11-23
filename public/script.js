@@ -53,3 +53,31 @@ document.querySelectorAll('.carousel').forEach(c => {
     if (!reduce) title.animate({ opacity: [0, 1] }, { duration: 400, easing: 'ease-out' });
   }, { passive: true });
 });
+
+// Formulário de pedido : WhatsApp pré-preenchido ou email via /api/pedido (Resend)
+const pedido = document.getElementById('pedido');
+pedido?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const dados = Object.fromEntries(new FormData(pedido));
+  if (e.submitter?.value === 'wa') {
+    const texto = [...pedido.querySelectorAll('label:not(.hp)')]
+      .map(l => { const c = l.querySelector('[name]'); return c.value.trim() && `${l.firstChild.textContent.replace('*', '').trim()}: ${c.value.trim()}`; })
+      .filter(Boolean).join('\n');
+    location.href = `https://wa.me/${pedido.dataset.wa}?text=${encodeURIComponent('Olá, gostaria de fazer um pedido de aluguer.\n\n' + texto)}`;
+    return;
+  }
+  const estado = pedido.querySelector('.pedido-estado'), botoes = pedido.querySelectorAll('button');
+  botoes.forEach(b => b.disabled = true);
+  estado.textContent = 'A enviar…';
+  try {
+    const r = await fetch('/api/pedido', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(dados) });
+    const res = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(res.error);
+    pedido.reset();
+    estado.textContent = 'Pedido enviado! Respondemos em breve.';
+  } catch (err) {
+    estado.textContent = err.message || 'O envio falhou. Contacte-nos por WhatsApp ou telefone.';
+  } finally {
+    botoes.forEach(b => b.disabled = false);
+  }
+});
