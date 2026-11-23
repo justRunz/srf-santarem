@@ -1,7 +1,7 @@
 ---
 import site from '../data/site.json';
 const { titulo } = Astro.props;
-import { wa, tel } from '../lib.js';
+import { tel } from '../lib.js';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos', 'Equipamentos'], ['/precos', 'Preços e Entregas'], ['/contactos', 'Contactos']];
 ---
@@ -40,7 +40,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
       <div>
         <h3>{site.nome}</h3>
         <p>{site.rodape.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
-        <div class="pills" style="margin-top:20px"><a class="pill light" href={wa}>Reservar pelo WhatsApp</a></div>
+        <div class="pills" style="margin-top:20px"><a class="pill light" href="/contactos#reservar">Reservar</a></div>
       </div>
       <div>
         <h3>Contacto</h3>

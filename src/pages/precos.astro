@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Destaque from '../components/Destaque.astro';
 import p from '../data/precos.json';
-import { wa } from '../lib.js';
 const t = p.tarifas;
 const stats = [
   [t.quinzeDias, '15 dias (mínimo)'],
@@ -14,7 +13,7 @@ const stats = [
 ---
 <Layout titulo="Preços e Entregas">
   <PageHero slot="hero" hero={p.hero}>
-    <div class="pills reveal" style="--d:.4s"><a class="pill" href={wa}>Reservar pelo WhatsApp</a><a class="pill ghost" href="/contactos">Contactos</a></div>
+    <div class="pills reveal" style="--d:.4s"><a class="pill" href="/contactos#reservar">Reservar</a></div>
   </PageHero>
   <section>
     <div class="wrap">
@@ -32,5 +31,5 @@ const stats = [
       </div>
     </div>
   </section>
-  <Destaque d={p.destaque}><a class="pill light" href={wa}>Reservar pelo WhatsApp</a><a class="pill light-ghost" href="/contactos">Contactos</a></Destaque>
+  <Destaque d={p.destaque}><a class="pill light" href="/contactos#reservar">Reservar</a></Destaque>
 </Layout>

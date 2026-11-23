@@ -7,7 +7,6 @@ import Destaque from '../components/Destaque.astro';
 import p from '../data/inicio.json';
 import precos from '../data/precos.json';
 const t = precos.tarifas;
-import { wa } from '../lib.js';
 ---
 <Layout titulo="Início">
   <div class="wrap hero" slot="hero">
@@ -16,7 +15,7 @@ import { wa } from '../lib.js';
       <Lines tag="h1" class="hero-title" linhas={p.hero.titulo} />
       <p class="hero-lead reveal" style="--d:.35s">{p.hero.texto}</p>
       <div class="pills reveal" style="--d:.45s">
-        <a class="pill" href={wa}>Reservar pelo WhatsApp</a>
+        <a class="pill" href="/contactos#reservar">Reservar</a>
         <a class="pill ghost" href="/precos">Ver preços</a>
       </div>
       <ul class="trust reveal" style="--d:.55s">
@@ -73,5 +72,5 @@ import { wa } from '../lib.js';
     </div>
   </section>
 
-  <Destaque d={p.sobre}><a class="pill light" href="/contactos">Reservar o seu equipamento</a><a class="pill light-ghost" href="/beneficios">Benefícios</a></Destaque>
+  <Destaque d={p.sobre}><a class="pill light" href="/contactos#reservar">Reservar o seu equipamento</a><a class="pill light-ghost" href="/beneficios">Benefícios</a></Destaque>
 </Layout>
