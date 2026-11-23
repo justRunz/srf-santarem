@@ -120,9 +120,11 @@ section{padding:clamp(72px,11vw,150px) 0}
 .card.featured h3{color:#fff}.card.featured p{color:rgba(255,255,255,.82)}
 
 /* Bande sombre */
-.dark{background:var(--midnight);color:#fff;margin:0 12px;border-radius:24px}
+.dark{background:var(--midnight);color:#fff;margin:0 12px;border-radius:24px;padding:clamp(56px,6vw,88px) 0}
 .dark h2,.dark h3{color:#fff}
 .dark .right{margin-left:auto;max-width:560px}
+.dark .com-foto{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.destaque-foto{width:100%;max-width:360px;height:0;min-height:100%;object-fit:cover;object-position:50% 25%;border-radius:20px}
 .dark p{color:rgba(255,255,255,.75)}
 .dark .eyebrow{color:rgba(255,255,255,.78)}
 
@@ -164,6 +166,8 @@ footer a:hover{color:#fff}
 
 /* ---------- Mobile ---------- */
 @media (max-width:900px){
+  .dark .com-foto{grid-template-columns:1fr;gap:32px}
+  .destaque-foto{max-width:none;height:auto;min-height:0;aspect-ratio:4/3}
   .features,.features.three,.cards,.contact-grid,footer .cols{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr 1fr}
   .stat{padding-bottom:24px}
