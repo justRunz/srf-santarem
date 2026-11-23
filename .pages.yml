@@ -198,5 +198,4 @@ content:
     format: json
     fields:
       - { name: hero, component: hero }
-      - { name: pedido, label: Texto do pedido, type: text }
       - { name: area, label: Área de serviço, type: text }

@@ -14,7 +14,6 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
   <section>
     <div class="wrap pedido-wrap" id="reservar">
       <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
-      <p class="lead reveal">{p.pedido}</p>
       <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
         <label>Nome *<input name="nome" required autocomplete="name"></label>
         <label>Telefone *<input name="telefone" type="tel" required autocomplete="tel"></label>
