@@ -12,20 +12,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
     <div class="pills reveal" style="--d:.4s"><a class="pill" href={wa}>WhatsApp</a><a class="pill ghost" href={tel}>Ligar</a></div>
   </PageHero>
   <section>
-    <div class="wrap contact-grid">
-      <div>
-        <p class="lead reveal" style="margin:0 0 40px">{p.pedido}</p>
-        <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.telefone}</a></div>
-        <div class="info reveal"><small>Email</small><a href={`mailto:${site.email}`}>{site.email}</a></div>
-        <div class="info reveal"><small>Morada</small>{morada}</div>
-        <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
-        <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
-      </div>
-      <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
-    </div>
-  </section>
-  <section>
-    <div class="wrap">
+    <div class="wrap pedido-wrap" id="reservar">
       <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
       <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
         <label>Nome *<input name="nome" required autocomplete="name"></label>
@@ -45,6 +32,16 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
         </div>
         <p class="full pedido-estado" role="status" aria-live="polite"></p>
       </form>
+    </div>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.telefone}</a></div>
+        <div class="info reveal"><small>Email</small><a href={`mailto:${site.email}`}>{site.email}</a></div>
+        <div class="info reveal"><small>Morada</small>{morada}</div>
+        <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
+        <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
+      </div>
+      <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
     </div>
   </section>
 </Layout>
