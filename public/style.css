@@ -142,6 +142,7 @@ section{padding:clamp(72px,11vw,150px) 0}
 .info small{display:block;color:var(--ash);font-size:.85rem;margin-bottom:4px}
 .info a{text-decoration:none;border-bottom:1px solid var(--hair)}
 iframe{width:100%;aspect-ratio:1;border:0;border-radius:20px;filter:grayscale(1) contrast(.95)}
+.pedido-wrap{margin-top:clamp(64px,8vw,112px)}
 .pedido{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;margin-top:40px;max-width:900px}
 .pedido label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--ash)}
 .pedido .full{grid-column:1/-1}

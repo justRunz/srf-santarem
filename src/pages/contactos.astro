@@ -23,9 +23,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
       </div>
       <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
     </div>
-  </section>
-  <section>
-    <div class="wrap">
+    <div class="wrap pedido-wrap">
       <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
       <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
         <label>Nome *<input name="nome" required autocomplete="name"></label>
