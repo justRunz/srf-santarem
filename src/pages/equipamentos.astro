@@ -20,6 +20,37 @@ import p from '../data/equipamentos.json';
   </section>
   <section style="padding-top:0">
     <div class="wrap">
+      <div class="head-row"><Lines class="h-md" linhas={p.comoFunciona.titulo} /></div>
+      <div class="features three">
+        {p.comoFunciona.itens.map((f, i) => <div class="feature passo reveal" style={i ? `--d:${i / 10}s` : undefined}><button class="passo-abrir" data-i={i} aria-label={`Ver vídeo em grande: ${f.titulo}`}><video src={f.video} poster={f.video.replace('.mp4', '.jpg')} autoplay muted loop playsinline aria-hidden="true"></video></button><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      </div>
+    </div>
+    <dialog class="lightbox" aria-label="Vídeo">
+      <div class="lb-top"><span class="lb-n"></span><button class="lb-fechar" aria-label="Fechar">✕</button></div>
+      <video class="lb-video" muted loop playsinline autoplay></video>
+      <div class="lb-bottom">
+        <h3 class="lb-titulo"></h3>
+        <div class="lb-nav"><button class="lb-prev" aria-label="Anterior">←</button><button class="lb-next" aria-label="Seguinte">→</button></div>
+      </div>
+    </dialog>
+    <script is:inline define:vars={{ passos: p.comoFunciona.itens.map((f) => ({ titulo: f.titulo, video: f.video })) }}>
+      const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(rm)document.querySelectorAll('.passo video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
+      const d=document.querySelector('.lightbox'), lv=d.querySelector('.lb-video');
+      let cur=0;
+      const mostrar=i=>{cur=(i+passos.length)%passos.length;const f=passos[cur];lv.poster=f.video.replace('.mp4','.jpg');lv.src=f.video;lv.play().catch(()=>{});d.querySelector('.lb-titulo').textContent=f.titulo;d.querySelector('.lb-n').textContent=`${cur+1}/${passos.length}`};
+      const miniaturas=document.querySelectorAll('.passo video');
+      document.querySelectorAll('.passo-abrir').forEach(b=>b.addEventListener('click',()=>{miniaturas.forEach(v=>v.pause());mostrar(+b.dataset.i);d.showModal()}));
+      d.querySelector('.lb-fechar').onclick=()=>d.close();
+      d.querySelector('.lb-prev').onclick=()=>mostrar(cur-1);
+      d.querySelector('.lb-next').onclick=()=>mostrar(cur+1);
+      d.addEventListener('click',e=>{if(e.target===d)d.close()});
+      d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')mostrar(cur-1);if(e.key==='ArrowRight')mostrar(cur+1)});
+      d.addEventListener('close',()=>{lv.pause();lv.removeAttribute('src');lv.load();if(!rm)miniaturas.forEach(v=>v.play().catch(()=>{}))});
+    </script>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
       <div class="head-row">
         <Lines class="h-md" linhas={p.pacotes.titulo} />
         <a class="pill ghost reveal" href="/precos">Ver preços</a>

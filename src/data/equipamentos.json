@@ -41,6 +41,29 @@
       "texto": "Ajuste a pressão e a duração de cada ciclo, de acordo com as indicações do seu cirurgião ou fisioterapeuta."
     }
   ],
+  "comoFunciona": {
+    "titulo": [
+      "Como",
+      "funciona."
+    ],
+    "itens": [
+      {
+        "titulo": "Gelo e água",
+        "texto": "Encha o reservatório com gelo e água fria. A unidade faz circular a água fria pela manga.",
+        "video": "/video/passo-gelo.mp4"
+      },
+      {
+        "titulo": "Ajuste no ecrã",
+        "texto": "Escolha a temperatura, a pressão e a duração do ciclo num ecrã simples.",
+        "video": "/video/passo-ecra.mp4"
+      },
+      {
+        "titulo": "Manga colocada",
+        "texto": "Feche a manga à volta da perna e ligue-a à unidade. O frio e a compressão fazem o resto.",
+        "video": "/video/passo-manga.mp4"
+      }
+    ]
+  },
   "pacotes": {
     "titulo": [
       "Pacotes",
