@@ -14,6 +14,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
   <section>
     <div class="wrap pedido-wrap" id="reservar">
       <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
+      <p class="lead reveal">{p.pedido}</p>
       <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
         <label>Nome *<input name="nome" required autocomplete="name"></label>
         <label>Telefone *<input name="telefone" type="tel" required autocomplete="tel"></label>
@@ -35,7 +36,6 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
     </div>
     <div class="wrap contact-grid">
       <div>
-        <p class="lead reveal" style="margin:0 0 40px">{p.pedido}</p>
         <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.telefone}</a></div>
         <div class="info reveal"><small>Email</small><a href={`mailto:${site.email}`}>{site.email}</a></div>
         <div class="info reveal"><small>Morada</small>{morada}</div>
