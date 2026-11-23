@@ -24,7 +24,7 @@ components:
           - { name: titulo, label: Nome, type: string }
           - { name: foto, label: Foto, type: image }
   pacotes:
-    label: Pacotes (3 cartões; duração e preço vêm das Tarifas)
+    label: Pacotes (3 cartões; a duração é fixa)
     type: object
     fields:
       - { name: titulo, label: Título (uma linha por item), type: string, list: true }
