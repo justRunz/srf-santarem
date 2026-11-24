@@ -5,10 +5,9 @@ import Destaque from '../components/Destaque.astro';
 import p from '../data/precos.json';
 const t = p.tarifas;
 const stats = [
-  [t.quinzeDias, '15 dias (mínimo)'],
-  [t.diaExtra, 'por dia extra, do 16.º ao 30.º'],
-  [t.mes, 'mês completo (30 dias)'],
-  [t.diaAposMes, 'por dia, após o 1.º mês'],
+  [t.quinzeDias, '15 dias mínimo', true],
+  [t.diaExtra, 'por dia extra a partir do 16.º dia'],
+  [t.mes, 'mês completo (30 dias)', true],
 ];
 ---
 <Layout titulo="Preços e Entregas">
@@ -18,7 +17,7 @@ const stats = [
   <section>
     <div class="wrap">
       <div class="stats" style="margin-bottom:clamp(72px,10vw,140px)">
-        {stats.map(([n, l]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><span>{l}</span></div>)}
+        {stats.map(([n, l, iva]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><small class="iva" style={iva ? undefined : "visibility:hidden"} aria-hidden={iva ? undefined : "true"}>s / IVA</small><span>{l}</span></div>)}
       </div>
       <div class="price-list">
         {p.grupos.map((g, i) => (

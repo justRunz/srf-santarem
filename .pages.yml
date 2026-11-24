@@ -24,7 +24,7 @@ components:
           - { name: titulo, label: Nome, type: string }
           - { name: foto, label: Foto, type: image }
   pacotes:
-    label: Pacotes (3 cartões; a duração é fixa)
+    label: Pacotes (2 cartões; a duração é fixa)
     type: object
     fields:
       - { name: titulo, label: Título (uma linha por item), type: string, list: true }
@@ -32,8 +32,8 @@ components:
         label: Cartões
         type: object
         list:
-          min: 3
-          max: 3
+          min: 2
+          max: 2
         fields:
           - { name: nome, label: Nome, type: string }
           - { name: texto, label: Texto, type: text }
@@ -75,9 +75,8 @@ content:
         type: object
         fields:
           - { name: quinzeDias, label: Aluguer mínimo 15 dias, type: number }
-          - { name: diaExtra, label: Dia extra (16.º ao 30.º), type: number }
+          - { name: diaExtra, label: Dia extra (a partir do 16.º dia), type: number }
           - { name: mes, label: Mês completo (30 dias), type: number }
-          - { name: diaAposMes, label: Por dia após o 1.º mês, type: number }
           - { name: caucao, label: Caução, type: number }
       - { name: hero, component: hero }
       - name: grupos

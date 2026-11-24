@@ -18,8 +18,20 @@
         "foto": "/img/cryo-unidade.png"
       },
       {
-        "titulo": "Manga para pernas",
+        "titulo": "Manga para perna inteira",
+        "foto": "/img/manga-pernas.webp"
+      },
+      {
+        "titulo": "Manga para joelho",
         "foto": "/img/cryo-manga.png"
+      },
+      {
+        "titulo": "Manga para ombro",
+        "foto": "/img/manga-ombro.webp"
+      },
+      {
+        "titulo": "Manga para pé",
+        "foto": "/img/manga-pe.webp"
       },
       {
         "titulo": "Mala de transporte",
@@ -77,10 +89,6 @@
       {
         "nome": "Intensivo",
         "texto": "Para uma recuperação cirúrgica completa, com compressão e frio diários durante o primeiro mês de fisioterapia."
-      },
-      {
-        "nome": "Extensão personalizada",
-        "texto": "Para recuperações mais longas, com tarifa diária ajustada e um contrato de aluguer transparente."
       }
     ]
   },
