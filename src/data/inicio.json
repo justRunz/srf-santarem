@@ -47,7 +47,15 @@
       },
       {
         "titulo": "Manga para pernas",
-        "foto": "/img/cryo-manga.png"
+        "foto": "/img/manga-pernas.webp"
+      },
+      {
+        "titulo": "Manga para ombro",
+        "foto": "/img/manga-ombro.webp"
+      },
+      {
+        "titulo": "Manga para pé",
+        "foto": "/img/manga-pe.webp"
       },
       {
         "titulo": "Mala de transporte",
