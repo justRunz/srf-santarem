@@ -1,9 +1,8 @@
 {
   "tarifas": {
-    "quinzeDias": 350,
+    "quinzeDias": 290,
     "diaExtra": 25,
     "mes": 520,
-    "diaAposMes": 30,
     "caucao": 0
   },
   "hero": {
@@ -27,11 +26,19 @@
           "valor": "Incluído"
         },
         {
-          "nome": "Manga para pernas",
+          "nome": "Manga para perna inteira",
+          "valor": "Incluído"
+        },
+        {
+          "nome": "Manga para joelho",
           "valor": "Incluído"
         },
         {
           "nome": "Manga para ombro",
+          "valor": "Incluído"
+        },
+        {
+          "nome": "Manga para pé",
           "valor": "Incluído"
         },
         {
