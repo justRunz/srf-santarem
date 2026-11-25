@@ -1,6 +1,6 @@
 ---
 import site from '../data/site.json';
-const { titulo } = Astro.props;
+const { title } = Astro.props;
 import { tel } from '../lib.js';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos', 'Equipamentos'], ['/precos', 'Preços e Entregas'], ['/contactos', 'Contactos']];
@@ -10,8 +10,8 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titulo} · {site.sigla} Santarém</title>
-<meta name="description" content={site.descricao}>
+<title>{title} · {site.acronym} Santarém</title>
+<meta name="description" content={site.description}>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <div class="sky">
 <header>
   <div class="wrap">
-    <a class="brand" href="/"><img class="logo" src="/img/logo.png" alt={`${site.sigla} — ${site.nome}`} width="640" height="183"></a>
+    <a class="brand" href="/"><img class="logo" src="/img/logo.png" alt={`${site.acronym} — ${site.name}`} width="640" height="183"></a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false">≡</button>
     <nav>
       {nav.map(([href, label]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}
@@ -38,21 +38,21 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
   <div class="wrap">
     <div class="cols">
       <div>
-        <h3>{site.nome}</h3>
-        <p>{site.rodape.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+        <h3>{site.name}</h3>
+        <p>{site.footer.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
         <div class="pills" style="margin-top:20px"><a class="pill light" href="/contactos#reservar">Reservar</a></div>
       </div>
       <div>
         <h3>Contacto</h3>
-        <p><a href={tel}>{site.telefone}</a><br><a href={`mailto:${site.email}`}>{site.email}</a><br>{site.morada}<br>{site.codigoPostal}</p>
+        <p><a href={tel}>{site.phone}</a><br><a href={`mailto:${site.email}`}>{site.email}</a><br>{site.address}<br>{site.postalCode}</p>
       </div>
       <div>
         <h3>Horário</h3>
-        <p>{site.horario.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
+        <p>{site.hours.map((l, i) => <>{i > 0 && <br />}{l}</>)}</p>
       </div>
     </div>
-    <div class="foot-mark">{site.sigla}</div>
-    <div class="legal"><span>© {new Date().getFullYear()} {site.nome}</span><span>Santarém, Portugal</span></div>
+    <div class="foot-mark">{site.acronym}</div>
+    <div class="legal"><span>© {new Date().getFullYear()} {site.name}</span><span>Santarém, Portugal</span></div>
   </div>
 </footer>
 <script is:inline src="/script.js"></script>

@@ -1,11 +1,11 @@
 {
   "hero": {
     "eyebrow": "Contactos",
-    "titulo": [
+    "title": [
       "Fale",
       "connosco."
     ],
-    "texto": "Por telefone, WhatsApp ou email. \nRespondemos no prazo máximo de uma hora."
+    "text": "Por telefone, WhatsApp ou email. \nRespondemos no prazo máximo de uma hora."
   },
   "area": "Entregas diretas em toda a região de Santarém. Enviamos para outras cidades com custos de entrega adicionais."
 }

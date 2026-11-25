@@ -1,15 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
-import Destaque from '../components/Destaque.astro';
-import p from '../data/beneficios.json';
+import Highlight from '../components/Highlight.astro';
+import p from '../data/benefits.json';
 ---
-<Layout titulo="Benefícios">
+<Layout title="Benefícios">
   <PageHero slot="hero" hero={p.hero} />
   <section>
     <div class="wrap features">
-      {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{f.title}</h3><p>{f.text}</p></div>)}
     </div>
   </section>
-  <Destaque d={p.destaque}><a class="pill light" href="/contactos">Falar connosco</a></Destaque>
+  <Highlight data={p.highlight}><a class="pill light" href="/contactos">Falar connosco</a></Highlight>
 </Layout>
