@@ -63,6 +63,9 @@ content:
       - { name: codigoPostal, label: Código postal e cidade, type: string }
       - { name: horario, label: Horário (uma linha por item), type: string, list: true }
       - { name: rodape, label: Texto do rodapé (uma linha por item), type: string, list: true }
+      - { name: nomeLegal, label: "Nome legal (pessoa ou empresa que fatura)", type: string }
+      - { name: nif, label: NIF, type: string }
+      - { name: iva, label: "Regime de IVA (ex.: Preços com IVA incluído / Isento de IVA ao abrigo do art. 53.º do CIVA)", type: string }
 
   - name: precos
     label: Preços e Entregas

@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import site from '../data/site.json';
+import { falta } from '../lib.js';
+const hero = { eyebrow: 'Informação legal', titulo: ['Política de', 'privacidade.'], texto: 'Que dados pessoais tratamos, porquê e quais são os seus direitos.' };
+---
+<Layout titulo="Política de privacidade">
+  <PageHero slot="hero" hero={hero} />
+  <section>
+    <div class="wrap doc">
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>{falta(site.nomeLegal, 'nome legal')}, NIF {falta(site.nif, 'NIF')}, {site.morada}, {site.codigoPostal}. Contacto: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+
+      <h2>2. Que dados tratamos</h2>
+      <p>Os dados que nos envia pelo formulário, WhatsApp, telefone ou email quando pede informações ou faz uma reserva: nome, telefone, email, morada de entrega e, quando o indica, o tipo e a data da cirurgia.</p>
+      <p>O tipo de cirurgia é um dado de saúde. Só o tratamos com o seu consentimento explícito, dado na caixa do formulário ou ao enviá-lo por outro meio, e apenas para preparar o equipamento adequado. Pode recusar-se a indicá-lo.</p>
+
+      <h2>3. Para que usamos os dados</h2>
+      <p>Para responder aos pedidos, executar o contrato de aluguer (entrega, recolha, apoio) e emitir faturas. As bases legais são a execução do contrato, o cumprimento de obrigações legais (faturação) e, para os dados de saúde, o seu consentimento explícito. Não usamos os dados para publicidade nem os vendemos.</p>
+
+      <h2>4. Durante quanto tempo</h2>
+      <p>Os dados de saúde são apagados no fim do aluguer. Os dados de faturação são conservados pelo prazo exigido pela lei fiscal. Os pedidos que não deem origem a aluguer são apagados no prazo de 6 meses.</p>
+
+      <h2>5. Serviços externos</h2>
+      <p>Os contactos passam por serviços de terceiros, que podem tratar dados fora da União Europeia com as garantias previstas no RGPD: WhatsApp (Meta), o alojamento de email (OVH), o serviço de envio de emails do formulário (Resend) e o alojamento do site (Vercel). O site carrega o tipo de letra a partir do Google Fonts e o mapa da página Contactos a partir do Google Maps, o que transmite o seu endereço IP à Google.</p>
+
+      <h2>6. Os seus direitos</h2>
+      <p>Pode pedir acesso, retificação, apagamento, limitação ou portabilidade dos seus dados, opor-se ao tratamento e retirar o consentimento a qualquer momento, escrevendo para <a href={`mailto:${site.email}`}>{site.email}</a>. Pode também apresentar queixa à Comissão Nacional de Proteção de Dados (<a href="https://www.cnpd.pt" rel="noopener">www.cnpd.pt</a>).</p>
+
+      <p class="muted">Última atualização: novembro de 2026.</p>
+    </div>
+  </section>
+</Layout>

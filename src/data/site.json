@@ -5,7 +5,7 @@
   "telefone": "+351 924 399 639",
   "whatsapp": "351924399639",
   "mensagemWhatsapp": "Olá, gostaria de informações sobre o aluguer do equipamento de frio e compressão.",
-  "email": "srf.cryorecovery@gmail.com",
+  "email": "contacto@srf-cryorecovery.com",
   "morada": "Largo do Comendador Paulino da Cunha e Silva Santos",
   "codigoPostal": "2005-134 Santarém",
   "horario": [
@@ -16,5 +16,8 @@
   "rodape": [
     "Aluguer de equipamento de frio e compressão em Santarém.",
     "Entrega direta em Santarém e envio para todo o Portugal."
-  ]
+  ],
+  "nomeLegal": "",
+  "nif": "",
+  "iva": ""
 }
