@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/inter-tight';
 import site from '../data/site.json';
 const { titulo } = Astro.props;
 import { tel } from '../lib.js';
@@ -12,9 +13,6 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{titulo} · {site.sigla} Santarém</title>
 <meta name="description" content={site.descricao}>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/png" href="/favicon.png">
 </head>
@@ -52,7 +50,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
       </div>
     </div>
     <div class="foot-mark">{site.sigla}</div>
-    <div class="legal"><span>© {new Date().getFullYear()} {site.nome}</span><span>Santarém, Portugal</span></div>
+    <div class="legal"><span>© {new Date().getFullYear()} {site.nome}</span><span><a href="/termos">Termos e condições</a> · <a href="/privacidade">Privacidade</a> · <a href="https://www.livroreclamacoes.pt" rel="noopener">Livro de Reclamações</a></span></div>
   </div>
 </footer>
 <script is:inline src="/script.js"></script>

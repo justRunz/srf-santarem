@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Lines from '../components/Lines.astro';
+import Mapa from '../components/Mapa.astro';
 import site from '../data/site.json';
 import p from '../data/contactos.json';
 import { wa, tel } from '../lib.js';
@@ -25,6 +26,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
         </label>
         <label class="full">Local de entrega *<input name="local" required autocomplete="street-address"></label>
         <label class="full">Mensagem<textarea name="mensagem" rows="4"></textarea></label>
+        <label class="full consent"><input type="checkbox" required><span>Autorizo o tratamento dos dados deste pedido, incluindo dados de saúde, nos termos da <a href="/privacidade">política de privacidade</a>. *</span></label>
         <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
         <div class="full pills">
           <button class="pill" value="wa">Enviar por WhatsApp</button>
@@ -41,7 +43,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
         <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
         <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
       </div>
-      <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
+      <Mapa />
     </div>
   </section>
 </Layout>
