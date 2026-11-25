@@ -160,7 +160,7 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 .info small{display:block;color:var(--ash);font-size:var(--fs-sm);margin-bottom:4px}
 .info a{text-decoration:none;border-bottom:1px solid var(--hair)}
 .booking-wrap{margin-bottom:var(--gap-section);scroll-margin-top:24px}
-.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-top:var(--sp-5);max-width:900px}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-top:var(--sp-5)}
 .booking-form label{display:flex;flex-direction:column;gap:var(--sp-1);font-size:var(--fs-sm);color:var(--ash)}
 .booking-form .full{grid-column:1/-1}
 .booking-form input,.booking-form select,.booking-form textarea{font:inherit;color:var(--ink);background:var(--white);border:1px solid var(--hair);border-radius:12px;padding:12px 14px;min-height:48px}
