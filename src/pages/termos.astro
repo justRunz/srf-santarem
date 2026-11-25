@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import site from '../data/site.json';
+import pricing from '../data/pricing.json';
+import { orPlaceholder } from '../lib.js';
+const r = pricing.rates;
+const hero = { eyebrow: 'Informação legal', title: ['Termos e', 'condições.'], text: 'Identificação do prestador e condições de aluguer do equipamento.' };
+---
+<Layout title="Termos e condições">
+  <PageHero slot="hero" hero={hero} />
+  <section>
+    <div class="wrap doc">
+      <h2>1. Identificação do prestador</h2>
+      <p>
+        Nome: {orPlaceholder(site.legalName, 'nome legal')}<br>
+        Nome comercial: {site.name} ({site.acronym})<br>
+        NIF: {orPlaceholder(site.taxId, 'NIF')}<br>
+        Morada: {site.address}, {site.postalCode}<br>
+        Email: <a href={`mailto:${site.email}`}>{site.email}</a> · Telefone: {site.phone}
+      </p>
+
+      <h2>2. Objeto</h2>
+      <p>Estes termos regulam o aluguer de equipamento de frio e compressão para uso pessoal, com entrega em Santarém e envio para o resto de Portugal continental.</p>
+
+      <h2>3. Preços</h2>
+      <p>Aluguer mínimo de 15 dias: {r.fifteenDays} €. Dia extra (do 16.º ao 30.º dia): {r.extraDay} €. Mês completo (30 dias): {r.month} €. Após o 1.º mês: {r.dayAfterMonth} € por dia. Os preços indicados são preços finais. {orPlaceholder(site.vatRegime, 'regime de IVA')}.</p>
+      <p>A entrega e a recolha na zona de Santarém são gratuitas. Para outras regiões, o custo de envio é calculado pela distância e comunicado antes da confirmação da reserva.</p>
+
+      <h2>4. Reserva e pagamento</h2>
+      <p>A reserva é feita por WhatsApp, telefone ou email e fica confirmada quando aceitamos o pedido por escrito, com a data de entrega, a duração e o preço total.</p>
+
+      <h2>5. Caução e danos</h2>
+      <p>{r.deposit ? `É pedida uma caução de ${r.deposit} €, devolvida no fim do aluguer depois de verificado o equipamento.` : 'Não é pedida caução.'} O cliente compromete-se a usar o equipamento com cuidado e de acordo com o guia entregue. Danos, perda ou falta de peças que não resultem do desgaste normal são cobrados ao cliente pelo custo de reparação ou substituição, depois de lhe ser mostrado o orçamento.</p>
+
+      <h2>6. Duração, prolongamento e devolução</h2>
+      <p>O aluguer pode ser prolongado a pedido, ao preço por dia indicado acima. A devolução é feita pelo mesmo método da entrega. Os dias de atraso na devolução não combinados são cobrados ao preço por dia em vigor.</p>
+
+      <h2>7. Direito de livre resolução</h2>
+      <p>Nos contratos celebrados à distância (WhatsApp, telefone ou email), o cliente pode desistir no prazo de 14 dias a contar da celebração do contrato, sem indicar motivo, através de declaração inequívoca enviada para <a href={`mailto:${site.email}`}>{site.email}</a> (pode ser usado o modelo de formulário do Decreto-Lei n.º 24/2014). Se o cliente pedir que o aluguer comece antes do fim desse prazo e depois desistir, paga apenas o valor proporcional aos dias em que teve o equipamento.</p>
+
+      <h2>8. Uso do equipamento</h2>
+      <p>O equipamento é um complemento à recuperação e não substitui o aconselhamento médico. Deve ser usado de acordo com as indicações do médico ou fisioterapeuta e com o guia entregue.</p>
+
+      <h2>9. Reclamações e resolução de litígios</h2>
+      <p>Pode apresentar reclamação no <a href="https://www.livroreclamacoes.pt" rel="noopener">Livro de Reclamações Eletrónico</a>. Em caso de litígio de consumo, pode recorrer ao CNIACC — Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (<a href="https://www.cniacc.pt" rel="noopener">www.cniacc.pt</a>), que encaminha o processo para o centro de arbitragem competente. Mais informação no <a href="https://www.consumidor.gov.pt" rel="noopener">Portal do Consumidor</a>.</p>
+
+      <p class="muted">Última atualização: novembro de 2026.</p>
+    </div>
+  </section>
+</Layout>

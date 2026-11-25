@@ -60,7 +60,7 @@ form?.addEventListener('submit', async e => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form));
   if (e.submitter?.value === 'wa') {
-    const text = [...form.querySelectorAll('label:not(.hp)')]
+    const text = [...form.querySelectorAll('label:not(.hp):not(.consent)')]
       .map(l => { const c = l.querySelector('[name]'); return c.value.trim() && `${l.firstChild.textContent.replace('*', '').trim()}: ${c.value.trim()}`; })
       .filter(Boolean).join('\n');
     location.href = `https://wa.me/${form.dataset.wa}?text=${encodeURIComponent('Olá, gostaria de fazer um pedido de aluguer.\n\n' + text)}`;
