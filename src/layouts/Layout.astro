@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/inter-tight';
+import Analytics from '@vercel/analytics/astro';
 import site from '../data/site.json';
 const { title } = Astro.props;
 import { tel } from '../lib.js';
@@ -15,6 +16,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <meta name="description" content={site.description}>
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/png" href="/favicon.png">
+<Analytics />
 </head>
 <body>
 <div class="sky">
