@@ -27,7 +27,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
       io.disconnect();
       const [{ default: L }] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
       const pos: [number, number] = [Number(el.dataset.lat), Number(el.dataset.lon)];
-      const map = L.map(el, { scrollWheelZoom: false }).setView(pos, 15);
+      const map = L.map(el, { scrollWheelZoom: false }).setView(pos, 14);
       map.attributionControl.setPrefix(false);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -35,7 +35,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
       }).addTo(map);
       const pin = L.divIcon({ className: '', html: '<span class="mapa-pin"></span>', iconSize: [18, 18], iconAnchor: [9, 9] });
       L.marker(pos, { icon: pin, keyboard: false })
-        .bindTooltip(el.dataset.nome ?? '', { permanent: true, direction: 'top', className: 'mapa-tip', offset: [0, -12] })
+        .bindTooltip(el.dataset.nome ?? '', { permanent: true, direction: 'bottom', className: 'mapa-tip', offset: [0, 12] })
         .addTo(map);
     }, { rootMargin: '400px' });
     io.observe(el);
