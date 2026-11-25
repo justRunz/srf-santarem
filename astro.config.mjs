@@ -5,7 +5,7 @@ const secret = { context: 'server', access: 'secret', optional: true };
 
 export default defineConfig({
   // O site continua estático; só /api/pedido corre a pedido (prerender = false).
-  adapter: vercel(),
+  adapter: vercel({ webAnalytics: { enabled: true } }),
   env: {
     schema: {
       // Opcionais: sem elas o site arranca e o envio por email devolve um erro.
