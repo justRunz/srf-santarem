@@ -3,7 +3,6 @@ const btn = document.querySelector('.menu-btn'), nav = document.querySelector('n
 btn?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   btn.setAttribute('aria-expanded', open);
-  btn.textContent = open ? '×' : '≡';
 });
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

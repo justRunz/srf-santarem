@@ -8,10 +8,10 @@ const durations = [
 ---
 <div class="cards">
   {items.slice(0, 2).map((it, i) => (
-    <div class={`card reveal${i === 1 ? ' featured' : ''}`} style={i ? `--d:${i / 10}s` : undefined}>
+    <a href="/precos" class={`card reveal${i === 1 ? ' featured' : ''}`} style={i ? `--d:${i / 10}s` : undefined}>
       <div class="dur">{durations[i].value} <small>{durations[i].unit}</small></div>
       <h3>{it.name}</h3>
       <p>{it.text}</p>
-    </div>
+    </a>
   ))}
 </div>

@@ -16,7 +16,7 @@ const stats = [
   </PageHero>
   <section>
     <div class="wrap">
-      <div class="stats" style="margin-bottom:clamp(72px,10vw,140px)">
+      <div class="stats">
         {stats.map(([n, l, vat]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><small class="vat" style={vat ? undefined : "visibility:hidden"} aria-hidden={vat ? undefined : "true"}>s / IVA</small><span>{l}</span></div>)}
       </div>
       <div class="price-list">

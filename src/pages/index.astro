@@ -35,15 +35,12 @@ const r = pricing.rates;
       <Lines class="h-lg" lines={p.intro.title} />
       <p class="lead reveal" style="--d:.3s">{p.intro.text}</p>
     </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap features">
+    <div class="wrap features mt-inner">
       {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.title}</h3><p>{f.text}</p></div>)}
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row">
         <Lines class="h-md" lines={p.kit.title} />
@@ -53,7 +50,7 @@ const r = pricing.rates;
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row">
         <Lines class="h-md" lines={p.packages.title} />
@@ -63,7 +60,7 @@ const r = pricing.rates;
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <span class="eyebrow reveal">{p.steps.eyebrow}</span>
       <div class="features three">

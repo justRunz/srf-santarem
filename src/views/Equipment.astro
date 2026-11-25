@@ -13,12 +13,12 @@ import p from '../data/equipment.json';
     <div class="wrap">
       <div class="head-row"><Lines class="h-md" lines={p.kit.title} /></div>
       <Carousel items={p.kit.items} />
-      <div class="features" style="margin-top:72px">
+      <div class="features mt-inner">
         {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.title}</h3><p>{f.text}</p></div>)}
       </div>
     </div>
   </section>
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row"><Lines class="h-md" lines={p.howItWorks.title} /></div>
       <div class="features three">
@@ -26,11 +26,11 @@ import p from '../data/equipment.json';
       </div>
     </div>
     <dialog class="lightbox" aria-label="Vídeo">
-      <div class="lb-top"><span class="lb-n"></span><button class="lb-close" aria-label="Fechar">✕</button></div>
+      <div class="lb-top"><span class="lb-n"></span><button class="lb-close" aria-label="Fechar"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
       <video class="lb-video" muted loop playsinline autoplay></video>
       <div class="lb-bottom">
         <h3 class="lb-title"></h3>
-        <div class="lb-nav"><button class="lb-prev" aria-label="Anterior">←</button><button class="lb-next" aria-label="Seguinte">→</button></div>
+        <div class="lb-nav"><button class="lb-prev" aria-label="Anterior"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="lb-next" aria-label="Seguinte"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
       </div>
     </dialog>
     <script is:inline define:vars={{ steps: p.howItWorks.items.map((f) => ({ title: f.title, video: f.video })) }}>
@@ -49,7 +49,7 @@ import p from '../data/equipment.json';
       d.addEventListener('close',()=>{lv.pause();lv.removeAttribute('src');lv.load();if(!rm)thumbs.forEach(v=>v.play().catch(()=>{}))});
     </script>
   </section>
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row">
         <Lines class="h-md" lines={p.packages.title} />
