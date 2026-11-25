@@ -105,8 +105,8 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 @media (prefers-reduced-motion:reduce){.lightbox[open]{animation:none}.step-open:hover video{transform:none}}
 
 /* Figures */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);margin-bottom:var(--sp-7)}
-.stat{padding:var(--sp-4) var(--sp-2) 0;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:var(--sp-7)}
+.stat{padding:0 var(--sp-2);text-align:center}
 .stat b{display:block;font-size:clamp(34px,4.2vw,60px);letter-spacing:-.04em;line-height:1;font-weight:700}
 .stat span{color:var(--slate);font-size:var(--fs-ui)}
 .stat .vat{display:block;margin:var(--sp-1) 0 4px;color:var(--slate);font-size:var(--fs-sm);font-weight:600;letter-spacing:.02em}
