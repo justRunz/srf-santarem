@@ -7,7 +7,7 @@
   --fs-sm:13px; --fs-ui:15px; --fs-h3:19px;
   /* Spacing scale */
   --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:32px; --sp-5:48px; --sp-6:64px; --sp-7:96px;
-  --gap-section:clamp(72px,11vw,150px); /* between topics */
+  --gap-section:clamp(64px,9vw,120px); /* between topics */
   --gap-inner:clamp(40px,5vw,64px);     /* between a heading/intro and its content */
   --font:"Inter Tight Variable","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.1,1);
