@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import { wa } from '../lib.js';
+const hero = {
+  eyebrow: 'Erro 404',
+  title: ['Página', 'não encontrada.'],
+  text: 'O endereço pode ter mudado ou já não existir. Volte ao início ou fale connosco: respondemos no prazo máximo de uma hora.',
+};
+---
+<Layout title="Página não encontrada">
+  <PageHero slot="hero" hero={hero}>
+    <div class="pills reveal" style="--d:.4s">
+      <a class="pill" href="/">Voltar ao início</a>
+      <a class="pill ghost" href="/contactos">Contactos</a>
+      <a class="pill ghost" href={wa}>WhatsApp</a>
+    </div>
+  </PageHero>
+</Layout>
