@@ -8,7 +8,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
 
 <style>
   .mapa{width:100%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:#efece8;z-index:0}
-  .mapa :global(.leaflet-tile-pane){filter:grayscale(1) contrast(.95)}
+  .mapa :global(.leaflet-tile-pane){filter:saturate(.75) contrast(.95)}
   .mapa :global(.leaflet-container){font-family:inherit;background:#efece8}
   .mapa :global(.leaflet-control-attribution){background:none;font-size:10px;color:var(--ash)}
   .mapa :global(.leaflet-control-attribution a){color:inherit}
