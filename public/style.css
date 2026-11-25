@@ -137,16 +137,16 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 .dark{background:var(--ink);color:#fff;margin:0 12px;border-radius:24px;padding:clamp(56px,7vw,96px) 0}
 .dark h2,.dark h3{color:#fff}
 .dark .right{margin-left:auto;max-width:560px}
-.dark .with-photo{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6)}
+.dark .with-photo{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);align-items:center}
 .dark .body{margin-top:var(--sp-3)}
 .dark .split .right{margin-left:0;max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6)}
 .dark .split .body{margin-top:0;max-width:560px}
-.highlight-photo{width:100%;max-width:360px;height:0;min-height:100%;object-fit:cover;object-position:50% 25%;border-radius:20px}
+.highlight-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 25%;border-radius:20px}
 .dark p{color:rgba(255,255,255,.75)}
 .dark .eyebrow{color:rgba(255,255,255,.78)}
 
 /* Price tables */
-.price-list{max-width:900px;margin:0 auto}
+.price-list{max-width:900px}
 .price-group{margin-bottom:var(--sp-6)}
 .price-group:last-child{margin-bottom:0}
 .price-group h3{font-size:var(--fs-h3);margin-bottom:var(--sp-1)}
@@ -204,7 +204,6 @@ footer a:hover{color:#fff}
   .dark .with-photo,.dark .split .right{grid-template-columns:1fr;gap:var(--sp-4)}
   .dark .split .right{gap:0}
   .dark .split .body{margin-top:var(--sp-3)}
-  .highlight-photo{max-width:none;height:auto;min-height:0;aspect-ratio:4/3}
   .features,.features.three,.cards,.contact-grid,.booking-form,footer .cols{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .stat{padding-bottom:var(--sp-3)}
@@ -222,7 +221,7 @@ footer a:hover{color:#fff}
 .slide img[src*="entrega"]{object-position:50% 20%}
 @media (min-width:901px){.slide img[src*="mala"],.slide img[src*="cryo-unidade"]{padding:120px 32px 72px}}
 @media (max-width:900px){.slide img[src*="manga-pernas"]{transform:translateY(-5%) scale(1.35)}.slide img[src*="manga-ombro"]{transform:translateY(-6%) scale(1.08)}.slide img[src*="manga-pe."]{transform:translateY(-5%) scale(.8)}}
-.doc{max-width:680px}
+.doc>*{max-width:680px} /* narrow column, but aligned with the page title */
 .doc h2{font-size:var(--fs-h3);margin:var(--sp-5) 0 var(--sp-2)}
 .doc h2:first-child{margin-top:0}
 .doc p{color:var(--ash);margin:0 0 var(--sp-2)}
