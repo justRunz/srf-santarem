@@ -1,0 +1,80 @@
+{
+  "rates": {
+    "fifteenDays": 290,
+    "extraDay": 25,
+    "month": 520,
+    "deposit": 0
+  },
+  "hero": {
+    "eyebrow": "Preços e Entregas",
+    "title": [
+      "Preços",
+      "claros."
+    ],
+    "text": "Alugue equipamento de compressão e crioterapia de alto nível médico. Entrega gratuita em Santarém e entrega fiável para outras regiões."
+  },
+  "groups": [
+    {
+      "title": "Incluído no kit",
+      "rows": [
+        {
+          "name": "Unidade de frio e compressão",
+          "value": "Incluído"
+        },
+        {
+          "name": "Mala de transporte",
+          "value": "Incluído"
+        },
+        {
+          "name": "Manga para perna inteira",
+          "value": "Incluído"
+        },
+        {
+          "name": "Manga para joelho",
+          "value": "Incluído"
+        },
+        {
+          "name": "Manga para ombro",
+          "value": "Incluído"
+        },
+        {
+          "name": "Manga para pé",
+          "value": "Incluído"
+        },
+        {
+          "name": "Guia e protocolo pós-cirurgia",
+          "value": "Incluído"
+        }
+      ]
+    },
+    {
+      "title": "Entrega e recolha",
+      "rows": [
+        {
+          "name": "Zona de Santarém",
+          "value": "Grátis"
+        },
+        {
+          "name": "Outras regiões",
+          "value": "Calculado pela distância"
+        },
+        {
+          "name": "Apoio na instalação",
+          "value": "Incluído"
+        },
+        {
+          "name": "Devolução",
+          "value": "Pelo mesmo método da entrega"
+        }
+      ]
+    }
+  ],
+  "depositTerms": "aplicam-se condições em caso de danos",
+  "highlight": {
+    "title": [
+      "Reserve já",
+      "o seu equipamento."
+    ],
+    "text": "Contacte-nos para confirmar a disponibilidade, agendar a entrega em Santarém ou noutra localidade e começar a sua recuperação."
+  }
+}

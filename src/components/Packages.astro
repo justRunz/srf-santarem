@@ -1,0 +1,17 @@
+---
+// 2 cards: fixed duration, text from the page data.
+const { items } = Astro.props;
+const durations = [
+  { value: '15', unit: 'dias' },
+  { value: '1', unit: 'mês' },
+];
+---
+<div class="cards">
+  {items.slice(0, 2).map((it, i) => (
+    <div class={`card reveal${i === 1 ? ' featured' : ''}`} style={i ? `--d:${i / 10}s` : undefined}>
+      <div class="dur">{durations[i].value} <small>{durations[i].unit}</small></div>
+      <h3>{it.name}</h3>
+      <p>{it.text}</p>
+    </div>
+  ))}
+</div>

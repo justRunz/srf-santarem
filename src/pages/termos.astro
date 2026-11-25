@@ -2,36 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import site from '../data/site.json';
-import p from '../data/precos.json';
-import { falta } from '../lib.js';
-const t = p.tarifas;
-const hero = { eyebrow: 'Informação legal', titulo: ['Termos e', 'condições.'], texto: 'Identificação do prestador e condições de aluguer do equipamento.' };
+import pricing from '../data/pricing.json';
+import { orPlaceholder } from '../lib.js';
+const r = pricing.rates;
+const hero = { eyebrow: 'Informação legal', title: ['Termos e', 'condições.'], text: 'Identificação do prestador e condições de aluguer do equipamento.' };
 ---
-<Layout titulo="Termos e condições">
+<Layout title="Termos e condições">
   <PageHero slot="hero" hero={hero} />
   <section>
     <div class="wrap doc">
       <h2>1. Identificação do prestador</h2>
       <p>
-        Nome: {falta(site.nomeLegal, 'nome legal')}<br>
-        Nome comercial: {site.nome} ({site.sigla})<br>
-        NIF: {falta(site.nif, 'NIF')}<br>
-        Morada: {site.morada}, {site.codigoPostal}<br>
-        Email: <a href={`mailto:${site.email}`}>{site.email}</a> · Telefone: {site.telefone}
+        Nome: {orPlaceholder(site.legalName, 'nome legal')}<br>
+        Nome comercial: {site.name} ({site.acronym})<br>
+        NIF: {orPlaceholder(site.taxId, 'NIF')}<br>
+        Morada: {site.address}, {site.postalCode}<br>
+        Email: <a href={`mailto:${site.email}`}>{site.email}</a> · Telefone: {site.phone}
       </p>
 
       <h2>2. Objeto</h2>
       <p>Estes termos regulam o aluguer de equipamento de frio e compressão para uso pessoal, com entrega em Santarém e envio para o resto de Portugal continental.</p>
 
       <h2>3. Preços</h2>
-      <p>Aluguer mínimo de 15 dias: {t.quinzeDias} €. Dia extra (do 16.º ao 30.º dia): {t.diaExtra} €. Mês completo (30 dias): {t.mes} €. Após o 1.º mês: {t.diaAposMes} € por dia. Os preços indicados são preços finais. {falta(site.iva, 'regime de IVA')}.</p>
+      <p>Aluguer mínimo de 15 dias: {r.fifteenDays} €. Dia extra (do 16.º ao 30.º dia): {r.extraDay} €. Mês completo (30 dias): {r.month} €. Após o 1.º mês: {r.dayAfterMonth} € por dia. Os preços indicados são preços finais. {orPlaceholder(site.vatRegime, 'regime de IVA')}.</p>
       <p>A entrega e a recolha na zona de Santarém são gratuitas. Para outras regiões, o custo de envio é calculado pela distância e comunicado antes da confirmação da reserva.</p>
 
       <h2>4. Reserva e pagamento</h2>
       <p>A reserva é feita por WhatsApp, telefone ou email e fica confirmada quando aceitamos o pedido por escrito, com a data de entrega, a duração e o preço total.</p>
 
       <h2>5. Caução e danos</h2>
-      <p>{t.caucao ? `É pedida uma caução de ${t.caucao} €, devolvida no fim do aluguer depois de verificado o equipamento.` : 'Não é pedida caução.'} O cliente compromete-se a usar o equipamento com cuidado e de acordo com o guia entregue. Danos, perda ou falta de peças que não resultem do desgaste normal são cobrados ao cliente pelo custo de reparação ou substituição, depois de lhe ser mostrado o orçamento.</p>
+      <p>{r.deposit ? `É pedida uma caução de ${r.deposit} €, devolvida no fim do aluguer depois de verificado o equipamento.` : 'Não é pedida caução.'} O cliente compromete-se a usar o equipamento com cuidado e de acordo com o guia entregue. Danos, perda ou falta de peças que não resultem do desgaste normal são cobrados ao cliente pelo custo de reparação ou substituição, depois de lhe ser mostrado o orçamento.</p>
 
       <h2>6. Duração, prolongamento e devolução</h2>
       <p>O aluguer pode ser prolongado a pedido, ao preço por dia indicado acima. A devolução é feita pelo mesmo método da entrega. Os dias de atraso na devolução não combinados são cobrados ao preço por dia em vigor.</p>

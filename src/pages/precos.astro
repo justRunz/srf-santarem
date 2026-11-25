@@ -1,34 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
-import Destaque from '../components/Destaque.astro';
-import p from '../data/precos.json';
-const t = p.tarifas;
+import Highlight from '../components/Highlight.astro';
+import p from '../data/pricing.json';
+const r = p.rates;
 const stats = [
-  [t.quinzeDias, '15 dias mínimo', true],
-  [t.diaExtra, 'por dia extra a partir do 16.º dia'],
-  [t.mes, 'mês completo (30 dias)', true],
+  [r.fifteenDays, '15 dias mínimo', true],
+  [r.extraDay, 'por dia extra a partir do 16.º dia'],
+  [r.month, 'mês completo (30 dias)', true],
 ];
 ---
-<Layout titulo="Preços e Entregas">
+<Layout title="Preços e Entregas">
   <PageHero slot="hero" hero={p.hero}>
     <div class="pills reveal" style="--d:.4s"><a class="pill" href="/contactos#reservar">Reservar</a></div>
   </PageHero>
   <section>
     <div class="wrap">
       <div class="stats" style="margin-bottom:clamp(72px,10vw,140px)">
-        {stats.map(([n, l, iva]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><small class="iva" style={iva ? undefined : "visibility:hidden"} aria-hidden={iva ? undefined : "true"}>s / IVA</small><span>{l}</span></div>)}
+        {stats.map(([n, l, vat]) => <div class="stat"><b data-count={n} data-suffix=" €">{n} €</b><small class="vat" style={vat ? undefined : "visibility:hidden"} aria-hidden={vat ? undefined : "true"}>s / IVA</small><span>{l}</span></div>)}
       </div>
       <div class="price-list">
-        {p.grupos.map((g, i) => (
+        {p.groups.map((g, i) => (
           <div class="price-group reveal">
-            <h3>{g.titulo}</h3>
-            {g.linhas.map((r) => <div class="row"><span>{r.nome}</span><b>{r.valor}</b></div>)}
-            {i === 0 && <div class="row"><span>Caução</span><b>{t.caucao ? `${t.caucao} €` : 'Não exigida'} ({p.condicoesCaucao})</b></div>}
+            <h3>{g.title}</h3>
+            {g.rows.map((row) => <div class="row"><span>{row.name}</span><b>{row.value}</b></div>)}
+            {i === 0 && <div class="row"><span>Caução</span><b>{r.deposit ? `${r.deposit} €` : 'Não exigida'} ({p.depositTerms})</b></div>}
           </div>
         ))}
       </div>
     </div>
   </section>
-  <Destaque d={p.destaque}><a class="pill light" href="/contactos#reservar">Reservar</a></Destaque>
+  <Highlight data={p.highlight}><a class="pill light" href="/contactos#reservar">Reservar</a></Highlight>
 </Layout>

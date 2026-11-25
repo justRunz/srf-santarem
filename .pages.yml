@@ -1,4 +1,5 @@
-# Configuração do Pages CMS (app.pagescms.org): o que o dono do site pode editar sem código.
+# Pages CMS config (app.pagescms.org): what the site owner can edit without code.
+# Field names (name:) are English code identifiers; labels stay in Portuguese for the editor.
 media:
   input: public/img
   output: /img
@@ -9,41 +10,41 @@ components:
     type: object
     fields:
       - { name: eyebrow, label: Pequeno texto acima do título, type: string }
-      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-      - { name: texto, label: Texto, type: text }
+      - { name: title, label: Título (uma linha por item), type: string, list: true }
+      - { name: text, label: Texto, type: text }
   kit:
     label: Carrossel do kit
     type: object
     fields:
-      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-      - name: itens
+      - { name: title, label: Título (uma linha por item), type: string, list: true }
+      - name: items
         label: Fotos
         type: object
         list: true
         fields:
-          - { name: titulo, label: Nome, type: string }
-          - { name: foto, label: Foto, type: image }
-  pacotes:
+          - { name: title, label: Nome, type: string }
+          - { name: photo, label: Foto, type: image }
+  packages:
     label: Pacotes (2 cartões; a duração é fixa)
     type: object
     fields:
-      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-      - name: itens
+      - { name: title, label: Título (uma linha por item), type: string, list: true }
+      - name: items
         label: Cartões
         type: object
         list:
           min: 2
           max: 2
         fields:
-          - { name: nome, label: Nome, type: string }
-          - { name: texto, label: Texto, type: text }
-  destaque:
+          - { name: name, label: Nome, type: string }
+          - { name: text, label: Texto, type: text }
+  highlight:
     label: Faixa escura
     type: object
     fields:
       - { name: eyebrow, label: Pequeno texto acima do título, type: string }
-      - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-      - { name: texto, label: Texto, type: text }
+      - { name: title, label: Título (uma linha por item), type: string, list: true }
+      - { name: text, label: Texto, type: text }
 
 content:
   - name: site
@@ -52,63 +53,63 @@ content:
     path: src/data/site.json
     format: json
     fields:
-      - { name: nome, label: Nome completo, type: string }
-      - { name: sigla, label: Sigla (menu e rodapé), type: string }
-      - { name: descricao, label: Descrição para o Google, type: text }
-      - { name: telefone, label: Telefone, type: string }
+      - { name: name, label: Nome completo, type: string }
+      - { name: acronym, label: Sigla (menu e rodapé), type: string }
+      - { name: description, label: Descrição para o Google, type: text }
+      - { name: phone, label: Telefone, type: string }
       - { name: whatsapp, label: "Número WhatsApp (só algarismos, com 351)", type: string }
-      - { name: mensagemWhatsapp, label: Mensagem pré-escrita do WhatsApp, type: string }
+      - { name: whatsappMessage, label: Mensagem pré-escrita do WhatsApp, type: string }
       - { name: email, label: Email, type: string }
-      - { name: morada, label: Morada, type: string }
-      - { name: codigoPostal, label: Código postal e cidade, type: string }
+      - { name: address, label: Morada, type: string }
+      - { name: postalCode, label: Código postal e cidade, type: string }
       - { name: lat, label: "Mapa: latitude (ex.: 39.2346)", type: number }
       - { name: lon, label: "Mapa: longitude (ex.: -8.6895)", type: number }
-      - { name: horario, label: Horário (uma linha por item), type: string, list: true }
-      - { name: rodape, label: Texto do rodapé (uma linha por item), type: string, list: true }
-      - { name: nomeLegal, label: "Nome legal (pessoa ou empresa que fatura)", type: string }
-      - { name: nif, label: NIF, type: string }
-      - { name: iva, label: "Regime de IVA (ex.: Preços com IVA incluído / Isento de IVA ao abrigo do art. 53.º do CIVA)", type: string }
+      - { name: hours, label: Horário (uma linha por item), type: string, list: true }
+      - { name: footer, label: Texto do rodapé (uma linha por item), type: string, list: true }
+      - { name: legalName, label: "Nome legal (pessoa ou empresa que fatura)", type: string }
+      - { name: taxId, label: NIF, type: string }
+      - { name: vatRegime, label: "Regime de IVA (ex.: Preços com IVA incluído / Isento de IVA ao abrigo do art. 53.º do CIVA)", type: string }
 
-  - name: precos
+  - name: pricing
     label: Preços e Entregas
     type: file
-    path: src/data/precos.json
+    path: src/data/pricing.json
     format: json
     fields:
-      - name: tarifas
+      - name: rates
         label: Tarifas (em €, usadas em todo o site)
         type: object
         fields:
-          - { name: quinzeDias, label: Aluguer mínimo 15 dias, type: number }
-          - { name: diaExtra, label: Dia extra (a partir do 16.º dia), type: number }
-          - { name: mes, label: Mês completo (30 dias), type: number }
-          - { name: caucao, label: Caução, type: number }
+          - { name: fifteenDays, label: Aluguer mínimo 15 dias, type: number }
+          - { name: extraDay, label: Dia extra (a partir do 16.º dia), type: number }
+          - { name: month, label: Mês completo (30 dias), type: number }
+          - { name: deposit, label: Caução, type: number }
       - { name: hero, component: hero }
-      - name: grupos
+      - name: groups
         label: Tabelas
         type: object
         list: true
         fields:
-          - { name: titulo, label: Título, type: string }
-          - name: linhas
+          - { name: title, label: Título, type: string }
+          - name: rows
             label: Linhas
             type: object
             list: true
             fields:
-              - { name: nome, label: Nome, type: string }
-              - { name: valor, label: Valor, type: string }
-      - { name: condicoesCaucao, label: Condições da caução, type: string }
-      - name: destaque
+              - { name: name, label: Nome, type: string }
+              - { name: value, label: Valor, type: string }
+      - { name: depositTerms, label: Condições da caução, type: string }
+      - name: highlight
         label: Faixa escura
         type: object
         fields:
-          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-          - { name: texto, label: Texto, type: text }
+          - { name: title, label: Título (uma linha por item), type: string, list: true }
+          - { name: text, label: Texto, type: text }
 
-  - name: inicio
+  - name: home
     label: Página Início
     type: file
-    path: src/data/inicio.json
+    path: src/data/home.json
     format: json
     fields:
       - name: hero
@@ -116,89 +117,89 @@ content:
         type: object
         fields:
           - { name: eyebrow, label: Pequeno texto acima do título, type: string }
-          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-          - { name: texto, label: Texto, type: text }
+          - { name: title, label: Título (uma linha por item), type: string, list: true }
+          - { name: text, label: Texto, type: text }
       - { name: intro, component: hero, label: Introdução }
-      - name: pontos
+      - name: points
         label: Blocos
         type: object
         list: true
         fields:
-          - { name: titulo, label: Título, type: string }
-          - { name: texto, label: Texto, type: text }
+          - { name: title, label: Título, type: string }
+          - { name: text, label: Texto, type: text }
       - { name: kit, component: kit }
-      - { name: pacotes, component: pacotes }
-      - name: passos
+      - { name: packages, component: packages }
+      - name: steps
         label: Como funciona
         type: object
         fields:
           - { name: eyebrow, label: Pequeno texto, type: string }
-          - name: itens
+          - name: items
             label: Passos
             type: object
             list: true
             fields:
-              - { name: titulo, label: Título, type: string }
-              - { name: texto, label: Texto, type: text }
-      - name: sobre
+              - { name: title, label: Título, type: string }
+              - { name: text, label: Texto, type: text }
+      - name: about
         label: Quem somos (faixa escura)
         type: object
         fields:
           - { name: eyebrow, label: Pequeno texto acima do título, type: string }
-          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-          - { name: textos, label: Parágrafos, type: text, list: true }
+          - { name: title, label: Título (uma linha por item), type: string, list: true }
+          - { name: texts, label: Parágrafos, type: text, list: true }
 
-  - name: beneficios
+  - name: benefits
     label: Página Benefícios
     type: file
-    path: src/data/beneficios.json
+    path: src/data/benefits.json
     format: json
     fields:
       - { name: hero, component: hero }
-      - name: pontos
+      - name: points
         label: Blocos
         type: object
         list: true
         fields:
-          - { name: titulo, label: Título, type: string }
-          - { name: texto, label: Texto, type: text }
-      - { name: destaque, component: destaque }
+          - { name: title, label: Título, type: string }
+          - { name: text, label: Texto, type: text }
+      - { name: highlight, component: highlight }
 
-  - name: equipamentos
+  - name: equipment
     label: Página Equipamentos
     type: file
-    path: src/data/equipamentos.json
+    path: src/data/equipment.json
     format: json
     fields:
       - { name: hero, component: hero }
       - { name: kit, component: kit }
-      - name: pontos
+      - name: points
         label: Blocos
         type: object
         list: true
         fields:
-          - { name: titulo, label: Título, type: string }
-          - { name: texto, label: Texto, type: text }
-      - name: comoFunciona
+          - { name: title, label: Título, type: string }
+          - { name: text, label: Texto, type: text }
+      - name: howItWorks
         label: Como funciona (3 vídeos)
         type: object
         fields:
-          - { name: titulo, label: Título (uma linha por item), type: string, list: true }
-          - name: itens
+          - { name: title, label: Título (uma linha por item), type: string, list: true }
+          - name: items
             label: Passos
             type: object
             list: { min: 3, max: 3 }
             fields:
-              - { name: titulo, label: Título, type: string }
-              - { name: texto, label: Texto, type: text }
+              - { name: title, label: Título, type: string }
+              - { name: text, label: Texto, type: text }
               - { name: video, label: "Vídeo (caminho, ex.: /video/passo-gelo.mp4)", type: string }
-      - { name: pacotes, component: pacotes }
-      - { name: destaque, component: destaque }
+      - { name: packages, component: packages }
+      - { name: highlight, component: highlight }
 
-  - name: contactos
+  - name: contact
     label: Página Contactos
     type: file
-    path: src/data/contactos.json
+    path: src/data/contact.json
     format: json
     fields:
       - { name: hero, component: hero }
