@@ -4,13 +4,17 @@ const { data } = Astro.props;
 const texts = data.texts ?? [data.text];
 ---
 <section class="dark">
-  <div class:list={["wrap", data.photo && "with-photo"]}>
+  <div class:list={["wrap", data.photo ? "with-photo" : "split"]}>
     {data.photo && <img class="highlight-photo reveal" src={data.photo} alt="" loading="lazy">}
     <div class="right">
-      {data.eyebrow && <span class="eyebrow reveal">{data.eyebrow}</span>}
-      <Lines class="h-md" lines={data.title} />
-      {texts.map((t, i) => <p class="reveal" style={i ? undefined : 'margin-top:28px'}>{t}</p>)}
-      <div class="pills reveal" style="margin-top:32px"><slot /></div>
+      <div>
+        {data.eyebrow && <span class="eyebrow reveal">{data.eyebrow}</span>}
+        <Lines class="h-md" lines={data.title} />
+      </div>
+      <div class="body">
+        {texts.map((t) => <p class="reveal">{t}</p>)}
+        <div class="pills reveal" style="margin-top:32px"><slot /></div>
+      </div>
     </div>
   </div>
 </section>

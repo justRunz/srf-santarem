@@ -11,6 +11,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
+<script is:inline>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · {site.acronym} Santarém</title>
 <meta name="description" content={site.description}>
@@ -23,7 +24,7 @@ const nav = [['/', 'Início'], ['/beneficios', 'Benefícios'], ['/equipamentos',
 <header>
   <div class="wrap">
     <a class="brand" href="/"><img class="logo" src="/img/logo.png" alt={`${site.acronym} — ${site.name}`} width="640" height="183"></a>
-    <button class="menu-btn" aria-label="Menu" aria-expanded="false">≡</button>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg><svg class="i-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav>
       {nav.map(([href, label]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}
     </nav>
