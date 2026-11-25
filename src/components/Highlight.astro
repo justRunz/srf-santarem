@@ -13,7 +13,7 @@ const texts = data.texts ?? [data.text];
       </div>
       <div class="body">
         {texts.map((t) => <p class="reveal">{t}</p>)}
-        <div class="pills reveal" style="margin-top:32px"><slot /></div>
+        <div class="pills reveal" style="margin-top:var(--sp-4)"><slot /></div>
       </div>
     </div>
   </div>

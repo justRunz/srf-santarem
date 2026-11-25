@@ -13,12 +13,12 @@ import p from '../data/equipment.json';
     <div class="wrap">
       <div class="head-row"><Lines class="h-md" lines={p.kit.title} /></div>
       <Carousel items={p.kit.items} />
-      <div class="features" style="margin-top:72px">
+      <div class="features mt-inner">
         {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.title}</h3><p>{f.text}</p></div>)}
       </div>
     </div>
   </section>
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row"><Lines class="h-md" lines={p.howItWorks.title} /></div>
       <div class="features three">
@@ -49,7 +49,7 @@ import p from '../data/equipment.json';
       d.addEventListener('close',()=>{lv.pause();lv.removeAttribute('src');lv.load();if(!rm)thumbs.forEach(v=>v.play().catch(()=>{}))});
     </script>
   </section>
-  <section style="padding-top:0">
+  <section class="flush">
     <div class="wrap">
       <div class="head-row">
         <Lines class="h-md" lines={p.packages.title} />
