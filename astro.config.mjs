@@ -5,7 +5,7 @@ const secret = { context: 'server', access: 'secret', optional: true };
 
 export default defineConfig({
   // The site stays static; only /api/booking runs on demand (prerender = false).
-  adapter: vercel(),
+  adapter: vercel({ webAnalytics: { enabled: true } }),
   env: {
     schema: {
       // Optional: without them the site still starts and email sending returns an error.
