@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "eyebrow": "Equipamentos",
+    "title": [
+      "Frio e",
+      "compressão."
+    ],
+    "text": "Sistemas de crioterapia profissionais, com compressão e frio contínuo aplicados nas pernas, no joelho, no pé ou no ombro. Disponíveis para aluguer em Santarém e em todo o Portugal."
+  },
+  "kit": {
+    "title": [
+      "O que vem",
+      "no kit."
+    ],
+    "items": [
+      {
+        "title": "Unidade de controlo",
+        "photo": "/img/cryo-unidade.png"
+      },
+      {
+        "title": "Manga para perna inteira",
+        "photo": "/img/manga-pernas.webp"
+      },
+      {
+        "title": "Manga para joelho",
+        "photo": "/img/cryo-manga.png"
+      },
+      {
+        "title": "Manga para ombro",
+        "photo": "/img/manga-ombro.webp"
+      },
+      {
+        "title": "Manga para pé",
+        "photo": "/img/manga-pe.webp"
+      },
+      {
+        "title": "Mala de transporte",
+        "photo": "/img/mala.png"
+      },
+      {
+        "title": "Guia pós-cirurgia",
+        "photo": "/img/guia.jpg"
+      }
+    ]
+  },
+  "points": [
+    {
+      "title": "Kit de aluguer completo",
+      "text": "Cada aluguer é entregue pronto a usar, com a unidade de controlo e as mangas adequadas à zona a tratar."
+    },
+    {
+      "title": "Interface simples",
+      "text": "Ajuste a pressão e a duração de cada ciclo, de acordo com as indicações do seu cirurgião ou fisioterapeuta."
+    }
+  ],
+  "howItWorks": {
+    "title": [
+      "Como",
+      "funciona."
+    ],
+    "items": [
+      {
+        "title": "Gelo e água",
+        "text": "Encha o reservatório com gelo e água fria. A unidade faz circular a água fria pela manga.",
+        "video": "/video/passo-gelo.mp4"
+      },
+      {
+        "title": "Ajuste no ecrã",
+        "text": "Escolha a temperatura, a pressão e a duração do ciclo num ecrã simples.",
+        "video": "/video/passo-ecra.mp4"
+      },
+      {
+        "title": "Manga colocada",
+        "text": "Feche a manga à volta da zona do tratamento e ligue-a à unidade. O frio e a compressão fazem o resto.",
+        "video": "/video/passo-manga.mp4"
+      }
+    ]
+  },
+  "packages": {
+    "title": [
+      "Pacotes",
+      "de aluguer."
+    ],
+    "items": [
+      {
+        "name": "Recuperação",
+        "text": "O aluguer mínimo. Unidade completa com as mangas necessárias, ideal para as duas semanas críticas após a cirurgia."
+      },
+      {
+        "name": "Intensivo",
+        "text": "Para uma recuperação cirúrgica completa, com compressão e frio diários durante o primeiro mês de fisioterapia."
+      }
+    ]
+  },
+  "highlight": {
+    "eyebrow": "Entrega e instalação",
+    "title": [
+      "Entregamos.",
+      "Montamos."
+    ],
+    "text": "Entregamos diretamente em sua casa em Santarém e enviamos para outras regiões com custos de entrega transparentes. Cada aluguer tem um contrato com regras de devolução claras, para que se possa concentrar apenas na sua recuperação."
+  }
+}

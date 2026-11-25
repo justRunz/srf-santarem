@@ -3,60 +3,60 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Lines from '../components/Lines.astro';
 import Carousel from '../components/Carousel.astro';
-import Pacotes from '../components/Pacotes.astro';
-import Destaque from '../components/Destaque.astro';
-import p from '../data/equipamentos.json';
+import Packages from '../components/Packages.astro';
+import Highlight from '../components/Highlight.astro';
+import p from '../data/equipment.json';
 ---
-<Layout titulo="Equipamentos">
+<Layout title="Equipamentos">
   <PageHero slot="hero" hero={p.hero} />
   <section>
     <div class="wrap">
-      <div class="head-row"><Lines class="h-md" linhas={p.kit.titulo} /></div>
-      <Carousel itens={p.kit.itens} />
+      <div class="head-row"><Lines class="h-md" lines={p.kit.title} /></div>
+      <Carousel items={p.kit.items} />
       <div class="features" style="margin-top:72px">
-        {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+        {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.title}</h3><p>{f.text}</p></div>)}
       </div>
     </div>
   </section>
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="head-row"><Lines class="h-md" linhas={p.comoFunciona.titulo} /></div>
+      <div class="head-row"><Lines class="h-md" lines={p.howItWorks.title} /></div>
       <div class="features three">
-        {p.comoFunciona.itens.map((f, i) => <div class="feature passo reveal" style={i ? `--d:${i / 10}s` : undefined}><button class="passo-abrir" data-i={i} aria-label={`Ver vídeo em grande: ${f.titulo}`}><video src={f.video} poster={f.video.replace('.mp4', '.jpg')} autoplay muted loop playsinline aria-hidden="true"></video></button><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+        {p.howItWorks.items.map((f, i) => <div class="feature step reveal" style={i ? `--d:${i / 10}s` : undefined}><button class="step-open" data-i={i} aria-label={`Ver vídeo em grande: ${f.title}`}><video src={f.video} poster={f.video.replace('.mp4', '.jpg')} autoplay muted loop playsinline aria-hidden="true"></video></button><h3>{f.title}</h3><p>{f.text}</p></div>)}
       </div>
     </div>
     <dialog class="lightbox" aria-label="Vídeo">
-      <div class="lb-top"><span class="lb-n"></span><button class="lb-fechar" aria-label="Fechar">✕</button></div>
+      <div class="lb-top"><span class="lb-n"></span><button class="lb-close" aria-label="Fechar">✕</button></div>
       <video class="lb-video" muted loop playsinline autoplay></video>
       <div class="lb-bottom">
-        <h3 class="lb-titulo"></h3>
+        <h3 class="lb-title"></h3>
         <div class="lb-nav"><button class="lb-prev" aria-label="Anterior">←</button><button class="lb-next" aria-label="Seguinte">→</button></div>
       </div>
     </dialog>
-    <script is:inline define:vars={{ passos: p.comoFunciona.itens.map((f) => ({ titulo: f.titulo, video: f.video })) }}>
+    <script is:inline define:vars={{ steps: p.howItWorks.items.map((f) => ({ title: f.title, video: f.video })) }}>
       const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-      if(rm)document.querySelectorAll('.passo video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
+      if(rm)document.querySelectorAll('.step video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
       const d=document.querySelector('.lightbox'), lv=d.querySelector('.lb-video');
       let cur=0;
-      const mostrar=i=>{cur=(i+passos.length)%passos.length;const f=passos[cur];lv.poster=f.video.replace('.mp4','.jpg');lv.src=f.video;lv.play().catch(()=>{});d.querySelector('.lb-titulo').textContent=f.titulo;d.querySelector('.lb-n').textContent=`${cur+1}/${passos.length}`};
-      const miniaturas=document.querySelectorAll('.passo video');
-      document.querySelectorAll('.passo-abrir').forEach(b=>b.addEventListener('click',()=>{miniaturas.forEach(v=>v.pause());mostrar(+b.dataset.i);d.showModal()}));
-      d.querySelector('.lb-fechar').onclick=()=>d.close();
-      d.querySelector('.lb-prev').onclick=()=>mostrar(cur-1);
-      d.querySelector('.lb-next').onclick=()=>mostrar(cur+1);
+      const show=i=>{cur=(i+steps.length)%steps.length;const f=steps[cur];lv.poster=f.video.replace('.mp4','.jpg');lv.src=f.video;lv.play().catch(()=>{});d.querySelector('.lb-title').textContent=f.title;d.querySelector('.lb-n').textContent=`${cur+1}/${steps.length}`};
+      const thumbs=document.querySelectorAll('.step video');
+      document.querySelectorAll('.step-open').forEach(b=>b.addEventListener('click',()=>{thumbs.forEach(v=>v.pause());show(+b.dataset.i);d.showModal()}));
+      d.querySelector('.lb-close').onclick=()=>d.close();
+      d.querySelector('.lb-prev').onclick=()=>show(cur-1);
+      d.querySelector('.lb-next').onclick=()=>show(cur+1);
       d.addEventListener('click',e=>{if(e.target===d)d.close()});
-      d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')mostrar(cur-1);if(e.key==='ArrowRight')mostrar(cur+1)});
-      d.addEventListener('close',()=>{lv.pause();lv.removeAttribute('src');lv.load();if(!rm)miniaturas.forEach(v=>v.play().catch(()=>{}))});
+      d.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+      d.addEventListener('close',()=>{lv.pause();lv.removeAttribute('src');lv.load();if(!rm)thumbs.forEach(v=>v.play().catch(()=>{}))});
     </script>
   </section>
   <section style="padding-top:0">
     <div class="wrap">
       <div class="head-row">
-        <Lines class="h-md" linhas={p.pacotes.titulo} />
+        <Lines class="h-md" lines={p.packages.title} />
         <a class="pill ghost reveal" href="/precos">Ver preços</a>
       </div>
-      <Pacotes itens={p.pacotes.itens} />
+      <Packages items={p.packages.items} />
     </div>
   </section>
-  <Destaque d={p.destaque}><a class="pill light" href="/contactos">Contactar para reservar</a></Destaque>
+  <Highlight data={p.highlight}><a class="pill light" href="/contactos">Contactar para reservar</a></Highlight>
 </Layout>

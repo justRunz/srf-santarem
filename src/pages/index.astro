@@ -2,25 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Lines from '../components/Lines.astro';
 import Carousel from '../components/Carousel.astro';
-import Pacotes from '../components/Pacotes.astro';
-import Destaque from '../components/Destaque.astro';
-import p from '../data/inicio.json';
-import precos from '../data/precos.json';
-const t = precos.tarifas;
+import Packages from '../components/Packages.astro';
+import Highlight from '../components/Highlight.astro';
+import p from '../data/home.json';
+import pricing from '../data/pricing.json';
+const r = pricing.rates;
 ---
-<Layout titulo="Início">
+<Layout title="Início">
   <div class="wrap hero" slot="hero">
     <div class="hero-text">
       <span class="eyebrow reveal">{p.hero.eyebrow}</span>
-      <Lines tag="h1" class="hero-title" linhas={p.hero.titulo} />
-      <p class="hero-lead reveal" style="--d:.35s">{p.hero.texto}</p>
+      <Lines tag="h1" class="hero-title" lines={p.hero.title} />
+      <p class="hero-lead reveal" style="--d:.35s">{p.hero.text}</p>
       <div class="pills reveal" style="--d:.45s">
         <a class="pill" href="/contactos#reservar">Reservar</a>
         <a class="pill ghost" href="/precos">Ver preços</a>
       </div>
       <ul class="trust reveal" style="--d:.55s">
         <li>Entrega grátis em Santarém</li>
-        <li>{t.caucao ? `${t.caucao} € de caução` : 'Sem caução'}</li>
+        <li>{r.deposit ? `${r.deposit} € de caução` : 'Sem caução'}</li>
       </ul>
     </div>
     <div class="hero-media">
@@ -32,45 +32,45 @@ const t = precos.tarifas;
   <section>
     <div class="wrap">
       <span class="eyebrow reveal">{p.intro.eyebrow}</span>
-      <Lines class="h-lg" linhas={p.intro.titulo} />
-      <p class="lead reveal" style="--d:.3s">{p.intro.texto}</p>
+      <Lines class="h-lg" lines={p.intro.title} />
+      <p class="lead reveal" style="--d:.3s">{p.intro.text}</p>
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="wrap features">
-      {p.pontos.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+      {p.points.map((f, i) => <div class="feature reveal" style={i % 2 ? '--d:.1s' : undefined}><h3>{f.title}</h3><p>{f.text}</p></div>)}
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="wrap">
       <div class="head-row">
-        <Lines class="h-md" linhas={p.kit.titulo} />
+        <Lines class="h-md" lines={p.kit.title} />
         <a class="pill ghost reveal" href="/equipamentos">Ver equipamentos</a>
       </div>
-      <Carousel itens={p.kit.itens} />
+      <Carousel items={p.kit.items} />
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="wrap">
       <div class="head-row">
-        <Lines class="h-md" linhas={p.pacotes.titulo} />
+        <Lines class="h-md" lines={p.packages.title} />
         <a class="pill ghost reveal" href="/precos">Preços e entregas</a>
       </div>
-      <Pacotes itens={p.pacotes.itens} />
+      <Packages items={p.packages.items} />
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="wrap">
-      <span class="eyebrow reveal">{p.passos.eyebrow}</span>
+      <span class="eyebrow reveal">{p.steps.eyebrow}</span>
       <div class="features three">
-        {p.passos.itens.map((f, i) => <div class="feature reveal" style={i ? `--d:${i / 10}s` : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{f.titulo}</h3><p>{f.texto}</p></div>)}
+        {p.steps.items.map((f, i) => <div class="feature reveal" style={i ? `--d:${i / 10}s` : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{f.title}</h3><p>{f.text}</p></div>)}
       </div>
     </div>
   </section>
 
-  <Destaque d={p.sobre}><a class="pill light" href="/contactos#reservar">Reservar o seu equipamento</a><a class="pill light-ghost" href="/beneficios">Benefícios</a></Destaque>
+  <Highlight data={p.about}><a class="pill light" href="/contactos#reservar">Reservar o seu equipamento</a><a class="pill light-ghost" href="/beneficios">Benefícios</a></Highlight>
 </Layout>

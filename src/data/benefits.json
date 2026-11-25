@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "eyebrow": "Benefícios",
+    "title": [
+      "Cada dia conta",
+      "na recuperação."
+    ],
+    "text": "Descubra como os nossos sistemas de crioterapia e compressão ajudam a recuperar, a reduzir o inchaço e a ganhar mobilidade mais depressa após uma cirurgia ou uma atividade física intensa."
+  },
+  "points": [
+    {
+      "title": "Recuperação pós-cirúrgica",
+      "text": "Recuperar de uma intervenção ortopédica, como uma cirurgia ao joelho ou ao ombro, exige cuidados específicos. A terapia de frio com compressão ajuda a controlar a inflamação e o inchaço, a gerir a dor e a recuperar a mobilidade."
+    },
+    {
+      "title": "Temperatura constante",
+      "text": "Os sacos de gelo derretem, saem do sítio e perdem eficácia em pouco tempo. O nosso equipamento mantém uma temperatura constante e regulada, sem variações nem fugas de água."
+    },
+    {
+      "title": "Compressão ativa",
+      "text": "A compressão pneumática envolve toda a articulação e permite controlar exatamente onde o frio é aplicado."
+    },
+    {
+      "title": "Desporto e reabilitação",
+      "text": "Útil para atletas que procuram aliviar a fadiga muscular, pessoas ativas no pós-treino e quem tem desconforto articular crónico. Bom complemento à fisioterapia com acompanhamento médico."
+    }
+  ],
+  "highlight": {
+    "photo": "/video/passo-gelo.jpg",
+    "eyebrow": "Frio controlado vs. gelo comum",
+    "title": [
+      "O gelo derrete.",
+      "O frio controlado não."
+    ],
+    "text": "As bolsas de gelo e as compressas congeladas perdem eficácia em pouco tempo. Os nossos sistemas profissionais garantem temperaturas constantes e reguladas, com compressão ativa, durante toda a sua recuperação."
+  }
+}

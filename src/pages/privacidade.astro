@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import site from '../data/site.json';
-import { falta } from '../lib.js';
-const hero = { eyebrow: 'Informação legal', titulo: ['Política de', 'privacidade.'], texto: 'Que dados pessoais tratamos, porquê e quais são os seus direitos.' };
+import { orPlaceholder } from '../lib.js';
+const hero = { eyebrow: 'Informação legal', title: ['Política de', 'privacidade.'], text: 'Que dados pessoais tratamos, porquê e quais são os seus direitos.' };
 ---
-<Layout titulo="Política de privacidade">
+<Layout title="Política de privacidade">
   <PageHero slot="hero" hero={hero} />
   <section>
     <div class="wrap doc">
       <h2>1. Responsável pelo tratamento</h2>
-      <p>{falta(site.nomeLegal, 'nome legal')}, NIF {falta(site.nif, 'NIF')}, {site.morada}, {site.codigoPostal}. Contacto: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+      <p>{orPlaceholder(site.legalName, 'nome legal')}, NIF {orPlaceholder(site.taxId, 'NIF')}, {site.address}, {site.postalCode}. Contacto: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
 
       <h2>2. Que dados tratamos</h2>
       <p>Os dados que nos envia pelo formulário, WhatsApp, telefone ou email quando pede informações ou faz uma reserva: nome, telefone, email, morada de entrega e, quando o indica, o tipo e a data da cirurgia.</p>

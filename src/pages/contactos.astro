@@ -2,48 +2,48 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Lines from '../components/Lines.astro';
-import Mapa from '../components/Mapa.astro';
+import LocationMap from '../components/LocationMap.astro';
 import site from '../data/site.json';
-import p from '../data/contactos.json';
+import p from '../data/contact.json';
 import { wa, tel } from '../lib.js';
-const morada = `${site.morada}, ${site.codigoPostal}`;
+const address = `${site.address}, ${site.postalCode}`;
 ---
-<Layout titulo="Contactos">
+<Layout title="Contactos">
   <PageHero slot="hero" hero={p.hero}>
     <div class="pills reveal" style="--d:.4s"><a class="pill" href={wa}>WhatsApp</a><a class="pill ghost" href={tel}>Ligar</a></div>
   </PageHero>
   <section>
-    <div class="wrap pedido-wrap" id="reservar">
-      <Lines class="h-md" linhas={['Faça o', 'seu pedido.']} />
-      <form id="pedido" class="pedido reveal" data-wa={site.whatsapp}>
-        <label>Nome *<input name="nome" required autocomplete="name"></label>
-        <label>Telefone *<input name="telefone" type="tel" required autocomplete="tel"></label>
+    <div class="wrap booking-wrap" id="reservar">
+      <Lines class="h-md" lines={['Faça o', 'seu pedido.']} />
+      <form id="booking" class="booking-form reveal" data-wa={site.whatsapp}>
+        <label>Nome *<input name="name" required autocomplete="name"></label>
+        <label>Telefone *<input name="phone" type="tel" required autocomplete="tel"></label>
         <label>Email<input name="email" type="email" autocomplete="email"></label>
-        <label>Tipo de cirurgia<input name="cirurgia"></label>
-        <label>Data da cirurgia<input name="data" type="date"></label>
+        <label>Tipo de cirurgia<input name="surgery"></label>
+        <label>Data da cirurgia<input name="date" type="date"></label>
         <label>Duração do aluguer
-          <select name="duracao"><option value="">—</option><option>15 dias</option><option>1 mês</option><option>Mais de 1 mês</option></select>
+          <select name="duration"><option value="">—</option><option>15 dias</option><option>1 mês</option><option>Mais de 1 mês</option></select>
         </label>
-        <label class="full">Local de entrega *<input name="local" required autocomplete="street-address"></label>
-        <label class="full">Mensagem<textarea name="mensagem" rows="4"></textarea></label>
+        <label class="full">Local de entrega *<input name="location" required autocomplete="street-address"></label>
+        <label class="full">Mensagem<textarea name="message" rows="4"></textarea></label>
         <label class="full consent"><input type="checkbox" required><span>Autorizo o tratamento dos dados deste pedido, incluindo dados de saúde, nos termos da <a href="/privacidade">política de privacidade</a>. *</span></label>
         <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
         <div class="full pills">
           <button class="pill" value="wa">Enviar por WhatsApp</button>
           <button class="pill ghost" value="email">Enviar por email</button>
         </div>
-        <p class="full pedido-estado" role="status" aria-live="polite"></p>
+        <p class="full booking-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <div class="wrap contact-grid">
       <div>
-        <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.telefone}</a></div>
+        <div class="info reveal"><small>Telefone / WhatsApp</small><a href={tel}>{site.phone}</a></div>
         <div class="info reveal"><small>Email</small><a href={`mailto:${site.email}`}>{site.email}</a></div>
-        <div class="info reveal"><small>Morada</small>{morada}</div>
-        <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
+        <div class="info reveal"><small>Morada</small>{address}</div>
+        <div class="info reveal"><small>Horário</small>{site.hours.join(' · ')}</div>
         <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
       </div>
-      <Mapa />
+      <LocationMap />
     </div>
   </section>
 </Layout>

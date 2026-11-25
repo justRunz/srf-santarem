@@ -1,25 +1,25 @@
 {
-  "nome": "Sistema de Recuperação Compressão e Frio",
-  "sigla": "SRF",
-  "descricao": "Aluguer de equipamento de crioterapia e compressão para recuperação pós-cirúrgica e desportiva. Entrega grátis em Santarém e envio para todo o Portugal.",
-  "telefone": "+351 924 399 639",
+  "name": "Sistema de Recuperação Compressão e Frio",
+  "acronym": "SRF",
+  "description": "Aluguer de equipamento de crioterapia e compressão para recuperação pós-cirúrgica e desportiva. Entrega grátis em Santarém e envio para todo o Portugal.",
+  "phone": "+351 924 399 639",
   "whatsapp": "351924399639",
-  "mensagemWhatsapp": "Olá, gostaria de informações sobre o aluguer do equipamento de frio e compressão.",
+  "whatsappMessage": "Olá, gostaria de informações sobre o aluguer do equipamento de frio e compressão.",
   "email": "contacto@srf-cryorecovery.com",
-  "morada": "Largo do Comendador Paulino da Cunha e Silva Santos",
-  "codigoPostal": "2005-134 Santarém",
+  "address": "Largo do Comendador Paulino da Cunha e Silva Santos",
+  "postalCode": "2005-134 Santarém",
   "lat": 39.2346,
   "lon": -8.6895,
-  "horario": [
+  "hours": [
     "Segunda a sexta: 9h – 17h",
     "Sábado: 10h – 15h",
     "Domingo: encerrado"
   ],
-  "rodape": [
+  "footer": [
     "Aluguer de equipamento de frio e compressão em Santarém.",
     "Entrega direta em Santarém e envio para todo o Portugal."
   ],
-  "nomeLegal": "",
-  "nif": "",
-  "iva": ""
+  "legalName": "",
+  "taxId": "",
+  "vatRegime": ""
 }

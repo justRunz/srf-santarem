@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Frio e compressão · Santarém",
+    "title": [
+      "Recupere",
+      "mais depressa,",
+      "em casa."
+    ],
+    "text": "Aluguer de equipamento profissional de compressão e crioterapia. Entregamos e montamos em sua casa."
+  },
+  "intro": {
+    "eyebrow": "O teu corpo, a tua prioridade",
+    "title": [
+      "Frio contínuo.",
+      "Compressão ativa.",
+      "Ao seu alcance."
+    ],
+    "text": "Combinando compressão pneumática com terapia de frio ajustável, este equipamento é uma referência na recuperação ortopédica e desportiva. Alugue-o para aliviar a dor e reduzir o inchaço nas pernas, no joelho, no ombro e no pé."
+  },
+  "points": [
+    {
+      "title": "Crioterapia ativa",
+      "text": "Circula água fria de forma contínua para aliviar a dor pós-cirúrgica, sem a confusão dos sacos de gelo tradicionais."
+    },
+    {
+      "title": "Compressão pneumática",
+      "text": "Imita as contrações musculares naturais para ajudar a reduzir o edema da zona tratada e reduzir o inchaço."
+    },
+    {
+      "title": "Entrega e instalação",
+      "text": "Entregamos e montamos a unidade em Santarém, e explicamos como a usar para que se sinta à vontade desde o primeiro dia."
+    },
+    {
+      "title": "Planos personalizados",
+      "text": "Opções flexíveis, adaptadas às recomendações do seu médico e ao seu calendário de recuperação."
+    }
+  ],
+  "kit": {
+    "title": [
+      "Um kit completo,",
+      "pronto a usar."
+    ],
+    "items": [
+      {
+        "title": "Unidade de controlo",
+        "photo": "/img/cryo-unidade.png"
+      },
+      {
+        "title": "Manga para perna inteira",
+        "photo": "/img/manga-pernas.webp"
+      },
+      {
+        "title": "Manga para joelho",
+        "photo": "/img/cryo-manga.png"
+      },
+      {
+        "title": "Manga para ombro",
+        "photo": "/img/manga-ombro.webp"
+      },
+      {
+        "title": "Manga para pé",
+        "photo": "/img/manga-pe.webp"
+      },
+      {
+        "title": "Mala de transporte",
+        "photo": "/img/mala.png"
+      },
+      {
+        "title": "Entrega em sua casa",
+        "photo": "/img/entrega.jpg"
+      }
+    ]
+  },
+  "packages": {
+    "title": [
+      "Um período para",
+      "cada recuperação."
+    ],
+    "items": [
+      {
+        "name": "Recuperação",
+        "text": "O aluguer mínimo, ideal para as duas semanas críticas após a cirurgia."
+      },
+      {
+        "name": "Intensivo",
+        "text": "Compressão e frio diários durante o primeiro mês de fisioterapia."
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "Como funciona",
+    "items": [
+      {
+        "title": "Contacte-nos",
+        "text": "Indique o tipo e a data da cirurgia, a duração do aluguer e o local de entrega."
+      },
+      {
+        "title": "Recebe em casa",
+        "text": "Entregamos e montamos a unidade. Grátis em Santarém, envio para todo o Portugal."
+      },
+      {
+        "title": "Recupere",
+        "text": "Use o equipamento conforme as indicações do seu médico. A devolução é feita pelo mesmo método da entrega."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Quem somos",
+    "title": [
+      "Uma recuperação",
+      "mais tranquila."
+    ],
+    "texts": [
+      "Sediado em Santarém, o Sistema de Recuperação Compressão e Frio nasceu para dar a pacientes e atletas acesso imediato a tecnologia de reabilitação de nível profissional.",
+      "Acreditamos que todos merecem cuidados pós-operatórios de qualidade, sem terem de comprar equipamento caro."
+    ]
+  }
+}
