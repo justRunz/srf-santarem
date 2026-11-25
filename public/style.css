@@ -78,9 +78,9 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4);flex-wrap:wrap;margin-bottom:var(--sp-5)}
 
 /* 2-column blocks separated by a rule */
-.features{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--sp-7)}
+.features{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--sp-7);row-gap:var(--sp-5)} /* gap only between rows, nothing after the last */
 .features.three{grid-template-columns:repeat(3,1fr);column-gap:var(--sp-5)}
-.feature{border-top:1px solid var(--hair);padding:var(--sp-3) 0 var(--sp-5)}
+.feature{border-top:1px solid var(--hair);padding-top:var(--sp-3)}
 .feature h3{font-size:var(--fs-h3);letter-spacing:-.01em;margin-bottom:var(--sp-1)}
 .feature p{color:var(--ash);margin:0}
 .feature .n{font-size:var(--fs-sm);font-weight:600;color:var(--ash);display:block;margin-bottom:var(--sp-3)}
@@ -148,6 +148,7 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 /* Price tables */
 .price-list{max-width:900px;margin:0 auto}
 .price-group{margin-bottom:var(--sp-6)}
+.price-group:last-child{margin-bottom:0}
 .price-group h3{font-size:var(--fs-h3);margin-bottom:var(--sp-1)}
 .row{display:flex;justify-content:space-between;gap:var(--sp-3);padding:var(--sp-2) 0;border-bottom:1px solid var(--hair)}
 .row span{color:var(--slate)}
