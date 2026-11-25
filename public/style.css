@@ -221,7 +221,6 @@ footer a:hover{color:#fff}
 .slide img[src*="entrega"]{object-position:50% 20%}
 @media (min-width:901px){.slide img[src*="mala"],.slide img[src*="cryo-unidade"]{padding:120px 32px 72px}}
 @media (max-width:900px){.slide img[src*="manga-pernas"]{transform:translateY(-5%) scale(1.35)}.slide img[src*="manga-ombro"]{transform:translateY(-6%) scale(1.08)}.slide img[src*="manga-pe."]{transform:translateY(-5%) scale(.8)}}
-.doc>*{max-width:680px} /* narrow column, but aligned with the page title */
 .doc h2{font-size:var(--fs-h3);margin:var(--sp-5) 0 var(--sp-2)}
 .doc h2:first-child{margin-top:0}
 .doc p{color:var(--ash);margin:0 0 var(--sp-2)}
