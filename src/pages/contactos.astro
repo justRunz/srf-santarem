@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Lines from '../components/Lines.astro';
+import Mapa from '../components/Mapa.astro';
 import site from '../data/site.json';
 import p from '../data/contactos.json';
 import { wa, tel } from '../lib.js';
@@ -42,7 +43,7 @@ const morada = `${site.morada}, ${site.codigoPostal}`;
         <div class="info reveal"><small>Horário</small>{site.horario.join(' · ')}</div>
         <div class="info reveal"><small>Área de serviço</small>{p.area}</div>
       </div>
-      <iframe class="reveal" title={`Mapa: ${morada}`} loading="lazy" src={`https://maps.google.com/maps?q=${encodeURIComponent(morada)}&output=embed`}></iframe>
+      <Mapa />
     </div>
   </section>
 </Layout>

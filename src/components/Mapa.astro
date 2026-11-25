@@ -1,0 +1,43 @@
+---
+// Mapa OpenStreetMap (Leaflet) em vez do iframe Google: sem cookies de rastreio.
+// O crédito « © OpenStreetMap » é obrigatório (licença ODbL).
+import site from '../data/site.json';
+const morada = `${site.morada}, ${site.codigoPostal}`;
+---
+<div class="mapa reveal" data-mapa data-lat={site.lat} data-lon={site.lon} data-nome={site.sigla} role="img" aria-label={`Mapa: ${morada}`}></div>
+
+<style>
+  .mapa{width:100%;aspect-ratio:1;border-radius:20px;overflow:hidden;background:#efece8;z-index:0}
+  .mapa :global(.leaflet-tile-pane){filter:grayscale(1) contrast(.95)}
+  .mapa :global(.leaflet-container){font-family:inherit;background:#efece8}
+  .mapa :global(.leaflet-control-attribution){background:none;font-size:10px;color:var(--ash)}
+  .mapa :global(.leaflet-control-attribution a){color:inherit}
+  .mapa :global(.leaflet-control-zoom){border:0;box-shadow:0 8px 24px -12px rgba(0,13,16,.35)}
+  .mapa :global(.mapa-pin){display:block;width:18px;height:18px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px #fff,0 0 0 10px rgba(0,13,16,.18)}
+  .mapa :global(.mapa-tip){padding:4px 12px;border:0;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;box-shadow:none}
+  .mapa :global(.mapa-tip::before){display:none}
+</style>
+
+<script>
+  const el = document.querySelector<HTMLElement>('[data-mapa]');
+  if (el) {
+    // Só carrega o Leaflet quando o mapa se aproxima do ecrã
+    const io = new IntersectionObserver(async (entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      const [{ default: L }] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
+      const pos: [number, number] = [Number(el.dataset.lat), Number(el.dataset.lon)];
+      const map = L.map(el, { scrollWheelZoom: false }).setView(pos, 15);
+      map.attributionControl.setPrefix(false);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+      }).addTo(map);
+      const pin = L.divIcon({ className: '', html: '<span class="mapa-pin"></span>', iconSize: [18, 18], iconAnchor: [9, 9] });
+      L.marker(pos, { icon: pin, keyboard: false })
+        .bindTooltip(el.dataset.nome ?? '', { permanent: true, direction: 'top', className: 'mapa-tip', offset: [0, -12] })
+        .addTo(map);
+    }, { rootMargin: '400px' });
+    io.observe(el);
+  }
+</script>

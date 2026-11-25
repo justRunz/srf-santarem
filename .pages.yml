@@ -61,6 +61,8 @@ content:
       - { name: email, label: Email, type: string }
       - { name: morada, label: Morada, type: string }
       - { name: codigoPostal, label: Código postal e cidade, type: string }
+      - { name: lat, label: "Mapa: latitude (ex.: 39.2346)", type: number }
+      - { name: lon, label: "Mapa: longitude (ex.: -8.6895)", type: number }
       - { name: horario, label: Horário (uma linha por item), type: string, list: true }
       - { name: rodape, label: Texto do rodapé (uma linha por item), type: string, list: true }
       - { name: nomeLegal, label: "Nome legal (pessoa ou empresa que fatura)", type: string }
