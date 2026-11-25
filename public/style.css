@@ -20,7 +20,9 @@ p{white-space:pre-line} /* keep line breaks typed in Pages CMS */
 a{color:inherit}
 h1,h2,h3{margin:0;font-weight:700;line-height:1;color:var(--ink)}
 p{margin:0 0 1em}
-.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.wrap{max-width:1304px;margin:0 auto;padding:0 calc(clamp(16px,4vw,48px) + 12px)}
+/* Rounded boxes sit 12px in from the page edge; their content keeps the same edges as the page's */
+.sky .wrap,.dark .wrap,footer .wrap{max-width:1280px;padding-inline:clamp(16px,4vw,48px)}
 .muted{color:var(--ash)}
 a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
@@ -207,6 +209,7 @@ footer a:hover{color:#fff}
   .features,.features.three,.cards,.contact-grid,.booking-form,footer .cols{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .stat{padding-bottom:var(--sp-3)}
+  .stat .vat[aria-hidden]{display:none} /* placeholder only needed to align the 3 columns on desktop */
   .slide{aspect-ratio:4/5}
   .menu-btn{display:grid}
   nav{display:none;position:absolute;top:76px;right:16px;left:16px;flex-direction:column;align-items:flex-start;gap:4px;background:#fff;border-radius:20px;padding:16px;box-shadow:0 20px 50px rgba(0,13,16,.15)}
