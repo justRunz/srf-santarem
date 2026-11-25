@@ -146,7 +146,6 @@ section.flush{padding-top:0} /* follows the previous section: one gap, not two *
 .dark .eyebrow{color:rgba(255,255,255,.78)}
 
 /* Price tables */
-.price-list{max-width:900px}
 .price-group{margin-bottom:var(--sp-6)}
 .price-group:last-child{margin-bottom:0}
 .price-group h3{font-size:var(--fs-h3);margin-bottom:var(--sp-1)}
