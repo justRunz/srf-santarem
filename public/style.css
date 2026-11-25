@@ -3,7 +3,7 @@
   --ink:#000d10; --white:#fff; --ash:#686b72; --hair:#d5d3d4;
   --midnight:#0f0f1c; --charcoal:#151623; --accent:#2d4a6e;
   --stone:#efece8; --stone-2:#e6e2dc;
-  --font:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font:"Inter Tight Variable","Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.1,1);
 }
 *{box-sizing:border-box}
